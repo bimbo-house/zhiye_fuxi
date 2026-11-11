@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>求职 · 不怎么 · 作为 · 有利于 · 与其…不如 · 固然 · 是否</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Noto+Serif+SC:wght@500;700;900&family=EB+Garamond:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFEDA8;--paper-deep:#f2d679;--sheet:#fffae3;--parch:#fff4c9;
+  --ink:#301728;--ink-soft:rgba(48,23,40,.66);--ink-ghost:rgba(48,23,40,.12);
+  --accent:#8e2f5e;--accent2:#301728;--gold:#c98f0c;--violet:#7a4a8c;--rose:#d9a3b8;--stone:#fbe7a6;
+  --line:rgba(48,23,40,.3);--line-dash:rgba(48,23,40,.09);
+  --ok:#2e6b3f;--ok-bg:#dcefc9;--bad-bg:#f6d4de;
+  --kai:"Kaiti SC","STKaiti","KaiTi","楷体","BiauKai","Noto Serif SC",serif;
+  --sans:"Nunito Sans",-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  --gar:"EB Garamond","Times New Roman",Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .19 0 0 0 0 .09 0 0 0 0 .16 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-thumb{background:rgba(48,23,40,.35);border-radius:10px}
+.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(to right,var(--line-dash) 1px,transparent 1px),linear-gradient(to bottom,var(--line-dash) 1px,transparent 1px);
+  background-size:72px 72px;mask-image:radial-gradient(ellipse at 50% 30%,black 40%,rgba(0,0,0,.3) 100%)}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 85% 10%,rgba(201,143,12,.18),transparent 40%),radial-gradient(circle at 5% 90%,rgba(142,47,94,.12),transparent 45%)}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sheetf{position:absolute;top:-8vh;opacity:.6;animation:fall linear infinite}
+.sheetf svg{width:100%;height:100%;display:block;animation:sway ease-in-out infinite alternate}
+@keyframes fall{to{transform:translateY(118vh)}}
+@keyframes sway{from{transform:translateX(-34px) rotate(-35deg)}to{transform:translateX(34px) rotate(40deg)}}
+.spk{position:absolute;width:22px;height:22px;animation:twinkle 3.4s ease-in-out infinite}
+.spk svg{width:100%;height:100%}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6) rotate(0)}50%{opacity:.85;transform:scale(1) rotate(20deg)}}
+@media (prefers-reduced-motion:reduce){.sheetf,.spk,#plane,#ant{display:none}}
+.wm{position:fixed;right:-30px;bottom:-60px;font-family:var(--kai);font-size:360px;font-weight:900;color:rgba(48,23,40,.05);pointer-events:none;z-index:0;line-height:1}
+
+/* верхняя панель */
+#bar{position:sticky;top:0;z-index:40;background:rgba(255,237,168,.93);backdrop-filter:blur(8px);border-bottom:1.6px solid var(--ink);padding:9px 24px}
+.bar-in{max-width:1080px;margin:0 auto;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.bar-in .ttl{font-family:var(--kai);font-weight:700;font-size:18px}
+.pg{flex:1;min-width:120px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800}
+.pg .track{flex:1;height:8px;border:1.4px solid var(--ink);position:relative;border-radius:99px;overflow:hidden}
+.pg .track i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:width .4s}
+.tg{border:1.5px solid var(--ink);background:transparent;padding:5px 13px;font-size:12px;font-weight:800;border-radius:999px;cursor:pointer;font-family:var(--sans);transition:.15s;color:var(--ink)}
+.tg:hover,.tg.on{background:var(--ink);color:var(--paper)}
+
+/* шапка */
+header{position:relative;z-index:2;padding:46px 24px 22px 92px;max-width:1080px;margin:0 auto;min-height:440px}
+.stamp{display:inline-block;border:2.5px solid var(--accent);color:var(--accent);font-weight:800;letter-spacing:.22em;padding:6px 14px;font-size:12px;transform:rotate(-2.5deg);margin-bottom:18px;background:rgba(255,250,227,.45)}
+h1{font-family:var(--kai);font-size:clamp(44px,7.4vw,84px);line-height:1.04;font-weight:700;position:relative;display:inline-block}
+h1 .latin{font-family:var(--gar);font-style:italic;font-weight:500;font-size:clamp(20px,3vw,30px);letter-spacing:.02em;display:block;margin-top:10px;color:var(--ink-soft)}
+.doodle{position:absolute;left:-8px;right:-14px;bottom:-14px;height:26px;pointer-events:none}
+.doodle path{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .5s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lead{max-width:620px;margin-top:20px;color:var(--ink-soft);font-size:15px}
+.lead i{font-family:var(--gar);font-size:17px;color:var(--ink)}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;max-width:760px}
+nav a{color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);padding:7px 14px;font-size:13px;font-weight:700;border-radius:999px;transition:.18s;background:rgba(255,250,227,.55)}
+nav a:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+nav a b{font-family:var(--kai);margin-right:6px}
+.hdeco{position:absolute;pointer-events:none}
+.h-cv{right:8px;top:38px;width:150px;transform:rotate(7deg);animation:bob 7s ease-in-out infinite}
+.h-clip{right:118px;top:22px;width:34px;transform:rotate(-14deg)}
+.h-seal{right:160px;top:258px;width:84px;transform:rotate(-9deg)}
+.h-spk{right:40px;top:300px;width:58px}
+.h-spk path{animation:twinkle 3s ease-in-out infinite}
+.h-spk path:nth-child(2){animation-delay:1.2s}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+#plane{position:absolute;top:110px;left:-160px;width:120px;z-index:3;pointer-events:none;animation:fly 24s linear infinite 1.5s}
+@keyframes fly{0%{transform:translate(0,0) rotate(6deg)}30%{transform:translate(42vw,-70px) rotate(-4deg)}60%{transform:translate(84vw,-10px) rotate(8deg)}100%{transform:translate(140vw,-90px) rotate(-6deg)}}
+#ant{position:absolute;bottom:2px;left:-60px;width:44px;z-index:3;pointer-events:none;animation:walk 38s linear infinite 4s}
+#ant .lg{animation:legs .28s linear infinite alternate;transform-origin:center}
+#ant .lg2{animation-delay:.14s}
+@keyframes walk{to{transform:translateX(min(1180px,105vw))}}
+@keyframes legs{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
+@media (max-width:860px){.h-cv,.h-clip,.h-seal,.h-spk{display:none}header{min-height:0}}
+
+main{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 80px 92px}
+section.task{margin-top:76px;position:relative;scroll-margin-top:70px}
+.binder{position:absolute;left:-58px;top:8px;bottom:8px;width:26px;
+  background-image:radial-gradient(circle 7px at 13px 13px,var(--paper-deep) 6px,rgba(48,23,40,.38) 7px,transparent 8px);background-size:26px 88px;background-repeat:repeat-y}
+.sec-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.sec-num{font-family:var(--kai);font-size:20px;font-weight:700;border:1.8px solid var(--ink);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--sheet);position:relative}
+.sec-num::after{content:"";position:absolute;inset:-6px;border:1px dashed rgba(142,47,94,.5);border-radius:50%;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h2{font-family:var(--gar);font-size:clamp(25px,4vw,36px);font-weight:700;flex:1;min-width:220px;line-height:1.15}
+h2 .zh{font-family:var(--kai)}
+.tgs{display:flex;gap:6px}
+.mini{border:1.4px solid var(--ink);background:var(--sheet);padding:3px 10px;font-size:11.5px;font-weight:800;border-radius:999px;cursor:pointer;font-family:var(--sans);color:var(--ink)}
+.mini.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:760px;margin-bottom:20px;font-family:var(--gar);font-style:italic;line-height:1.45}
+.sec-sub b{font-style:normal;color:var(--ink)}
+.panel{border:1.8px solid var(--ink);background:rgba(255,250,227,.66);padding:24px;position:relative;box-shadow:6px 6px 0 rgba(48,23,40,.13)}
+.panel::before{content:"";position:absolute;top:-1.8px;left:24px;width:90px;height:5px;background:var(--accent)}
+.panel>.tape{position:absolute;top:-13px;right:38px;width:92px;height:24px;background:rgba(217,163,184,.5);transform:rotate(4deg);border-left:2px dashed rgba(255,255,255,.6);border-right:2px dashed rgba(255,255,255,.6)}
+.shot{margin-top:20px;border:1.4px dashed var(--accent);padding:8px 13px;font-size:12.5px;font-weight:800;color:var(--accent);text-align:center;letter-spacing:.04em;background:rgba(142,47,94,.05)}
+.shot::before{content:"📸 "}
+.subhead{font-family:var(--gar);font-size:23px;font-weight:700;margin:30px 0 12px;border-bottom:1.6px solid var(--ink);padding-bottom:6px;display:flex;align-items:center;gap:10px}
+.subhead .zh{font-family:var(--kai)}
+.subhead::before{content:"";width:16px;height:16px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z' fill='%238e2f5e'/%3E%3C/svg%3E") center/contain no-repeat}
+.culture{margin-top:18px;border-left:4px solid var(--gold);background:rgba(201,143,12,.11);padding:12px 16px;font-size:14px}
+.culture .ch-t{font-family:var(--kai);font-weight:700;color:var(--accent);font-size:16px;margin-bottom:4px;display:block}
+.culture b.zh,.culture .zh{font-family:var(--kai);font-size:17px}
+.warn{margin-top:16px;border:1.6px solid var(--accent);background:var(--bad-bg);padding:12px 16px;font-size:14px}
+.warn .h{font-weight:800;color:var(--accent);display:block;margin-bottom:4px}
+.warn ol{padding-left:20px}.warn li{margin:4px 0}
+.zh{font-family:var(--kai)}
+s.zh,.x{color:var(--accent);text-decoration:line-through}
+.foot{font-size:12.5px;color:var(--ink-soft);margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+.foot b{font-family:var(--kai);font-size:15px;color:var(--ink)}
+.ornament{display:flex;justify-content:center;margin:56px 0 -36px;opacity:.75}
+.ornament svg{width:220px;height:30px}
+
+.btn{font-family:var(--sans);font-weight:800;font-size:13px;border:1.6px solid var(--ink);background:var(--sheet);color:var(--ink);padding:8px 16px;cursor:pointer;border-radius:999px;transition:.15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.small{padding:5px 12px;font-size:12px}
+.btn[disabled]{opacity:.45;cursor:default;transform:none}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.msg{font-weight:800;font-size:13.5px}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--accent)}
+.score{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800;font-size:14px;margin-top:18px}
+.score .bar{flex:1;min-width:130px;height:9px;border:1.5px solid var(--ink);position:relative;border-radius:99px;overflow:hidden}
+.score .bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .4s}
+.score .err{color:var(--accent)}
+.shake{animation:shake .35s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* пиньинь / перевод */
+.py{color:var(--accent);font-weight:700;font-style:italic}
+.tr{color:var(--ink-soft)}
+.nopy .py{display:none!important}
+.notr .tr{display:none!important}
+
+/* новые слова */
+.nw{-webkit-text-emphasis:filled dot var(--violet);text-emphasis:filled dot var(--violet);-webkit-text-emphasis-position:under;text-emphasis-position:under right;cursor:help;border-radius:3px;transition:background .15s}
+.nw:hover,.nw:focus{background:rgba(122,74,140,.14);outline:none}
+#tip{position:fixed;z-index:90;pointer-events:none;background:var(--sheet);border:1.6px solid var(--ink);box-shadow:4px 4px 0 rgba(142,47,94,.25);padding:8px 12px;min-width:120px;max-width:260px;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;text-align:center}
+#tip.on{opacity:1;transform:none}
+#tip .c{font-family:var(--kai);font-size:28px;font-weight:700;line-height:1.1}
+#tip .p{color:var(--accent);font-weight:800;font-style:italic;font-size:14px}
+#tip .r{font-size:13px;color:var(--ink);line-height:1.3;margin-top:2px}
+em.rc{font-style:normal;color:var(--accent);font-weight:900}
+
+/* словарь */
+.dict-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.inp{border:1.6px solid var(--ink);background:var(--sheet);padding:8px 12px;font-size:14px;font-family:var(--sans);outline:none;border-radius:4px;color:var(--ink)}
+.inp:focus{border-color:var(--accent)}
+#dSearch{flex:1;min-width:200px}
+.dtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.dtabs button{border:1.4px solid var(--ink);background:var(--sheet);padding:4px 12px;font-size:12.5px;font-weight:800;border-radius:999px;cursor:pointer;font-family:var(--sans);color:var(--ink)}
+.dtabs button.on{background:var(--ink);color:var(--paper)}
+.dlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;max-height:420px;overflow:auto;padding:2px 4px 2px 2px}
+.dcard{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;border:1.4px solid var(--ink);background:var(--sheet);padding:7px 9px}
+.dcard.imp{border-style:dashed;border-color:var(--accent)}
+.dcard .dc{font-family:var(--kai);font-size:23px;font-weight:700;line-height:1.15}
+.dcard .meta{font-size:12.5px;line-height:1.3;display:block}
+.star{border:none;background:none;font-size:19px;cursor:pointer;color:rgba(48,23,40,.25)}
+.star.on{color:var(--gold)}
+.bank-head{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.fc-set{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px;font-weight:700}
+.fc-set select{border:1.4px solid var(--ink);background:var(--sheet);padding:6px 8px;font-family:var(--sans);font-size:13px;color:var(--ink)}
+.fc-set label{display:flex;gap:5px;align-items:center;cursor:pointer}
+.fc-stage{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fcard{width:min(440px,100%);min-height:210px;perspective:1000px;cursor:pointer}
+.fcard .in{position:relative;width:100%;min-height:210px;transition:transform .5s;transform-style:preserve-3d}
+.fcard.flip .in{transform:rotateY(180deg)}
+.fcard .face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid var(--ink);background:var(--sheet);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;box-shadow:6px 6px 0 rgba(142,47,94,.18)}
+.fcard .back{transform:rotateY(180deg);background:#fff6d6;border-color:var(--accent)}
+.fcard .big{font-family:var(--kai);font-size:52px;font-weight:700;line-height:1.15}
+.fcard .mid{font-size:20px;font-weight:800}
+.fcard .hint{font-size:12px;color:var(--ink-soft);margin-top:10px}
+.fc-info{font-size:13px;font-weight:700;color:var(--ink-soft)}
+
+/* грамматика */
+.rule{border:1.8px solid var(--ink);background:var(--sheet);padding:14px 18px;margin-bottom:16px;font-size:15px;position:relative}
+.rule b{color:var(--accent)}
+.gnav{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 10px}
+.gnav a{text-decoration:none;color:var(--ink);background:var(--stone);min-width:92px;height:76px;padding:0 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--kai);font-size:24px;font-weight:700;box-shadow:2px 4px 8px rgba(48,23,40,.16);transition:.2s;line-height:1.05}
+.gnav a small{font-family:var(--sans);font-size:10.5px;font-style:italic;color:var(--accent);font-weight:800;margin-top:5px}
+.gnav a:nth-child(odd){transform:rotate(-2.5deg)}.gnav a:nth-child(even){transform:rotate(2deg)}
+.gnav a:hover{transform:translateY(-4px) rotate(0);background:var(--sheet)}
+.gcard{border:1.8px solid var(--ink);background:var(--sheet);padding:20px 20px 16px;position:relative;scroll-margin-top:80px;box-shadow:5px 5px 0 rgba(48,23,40,.1);margin-top:30px}
+.gcard:target{box-shadow:0 0 0 3px var(--accent)}
+.gcard .gh{display:flex;align-items:center;gap:16px;border-bottom:1.4px solid var(--ink);padding-bottom:12px;margin-bottom:12px;flex-wrap:wrap}
+.gcard .seal{min-width:74px;height:74px;padding:0 10px;flex:none;border:2.4px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--kai);font-weight:900;font-size:30px;background:rgba(142,47,94,.06);border-radius:8px;transform:rotate(-3deg);line-height:1}
+.gcard .gt{font-family:var(--gar);font-size:24px;font-weight:700;line-height:1.2;flex:1;min-width:200px}
+.gcard .gt .py{font-family:var(--sans);font-size:15px;display:block}
+.gcard .gt .mean{display:block;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink-soft)}
+.gcard .gnum{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--violet);text-transform:uppercase;border:1.3px solid var(--violet);padding:1px 8px;border-radius:99px}
+.fm{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+.fm span{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:rgba(122,74,140,.08);border:1px dashed rgba(122,74,140,.55);padding:5px 10px}
+.fm span b{font-family:var(--kai);font-size:17px;color:var(--accent)}
+.gdesc{font-size:15px;margin:6px 0 4px}
+.gdesc p{margin-top:6px}
+.gcols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+@media (max-width:820px){.gcols{grid-template-columns:1fr}}
+.gex{font-family:var(--kai);font-size:20px;font-weight:700;border-left:3px solid var(--accent);padding:4px 10px;background:rgba(142,47,94,.06);margin-top:8px;line-height:1.55}
+.gex .py,.gex .tr{display:block;font-family:var(--sans);font-size:12.8px;font-weight:600;line-height:1.35}
+.gex.mine{border-left-color:var(--gold);background:rgba(201,143,12,.1)}
+.gex.bad{border-left-color:var(--ink-soft);background:rgba(48,23,40,.05)}
+.gex.bad .zh-x{color:var(--accent);text-decoration:line-through}
+.gtag{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:800;background:var(--paper);border:1.2px solid var(--ink);padding:0 8px;margin-bottom:2px;font-style:normal;color:var(--ink);letter-spacing:.04em}
+.gex.mine .gtag{background:var(--gold);border-color:var(--gold);color:#fff}
+.gnote{margin-top:12px;font-size:13.8px;border-top:1px dashed var(--line);padding-top:8px}
+.gnote::before{content:"✦ ";color:var(--accent)}
+.gtrap{margin-top:12px;font-size:13.8px;border:1.3px solid var(--accent);background:var(--bad-bg);padding:8px 12px}
+.gtrap b.h{color:var(--accent)}
+.gtrap ul{padding-left:18px;margin-top:3px}.gtrap li{margin:3px 0}
+table.tbl{border-collapse:collapse;width:100%;font-size:14px;background:var(--sheet);margin-top:8px}
+.tbl th,.tbl td{border:1.3px solid var(--ink);padding:7px 10px;text-align:left;vertical-align:top}
+.tbl th{background:rgba(201,143,12,.18);font-weight:800}
+.tbl td .zh{font-size:18px;font-weight:700}
+.tblw{overflow-x:auto}
+/* весы 与其…不如 */
+.scale{display:flex;align-items:center;justify-content:center;margin:12px 0 4px}
+.scale svg{width:320px;max-width:100%;height:160px}
+.scale .beam{transform-origin:150px 52px;animation:tilt 5s ease-in-out infinite}
+.scale .panL{animation:panL 5s ease-in-out infinite}
+.scale .panR{animation:panR 5s ease-in-out infinite}
+@keyframes tilt{0%,15%{transform:rotate(0)}40%,85%{transform:rotate(14deg)}100%{transform:rotate(0)}}
+@keyframes panL{0%,15%{transform:translateY(0)}40%,85%{transform:translateY(-24px)}100%{transform:translateY(0)}}
+@keyframes panR{0%,15%{transform:translateY(0)}40%,85%{transform:translateY(24px)}100%{transform:translateY(0)}}
+
+/* задания */
+.qitem{border:1.5px solid var(--ink);background:var(--sheet);padding:12px 14px;margin-bottom:10px;position:relative}
+.qitem.ok{border-color:var(--ok);background:var(--ok-bg)}.qitem.bad{border-color:var(--accent);background:var(--bad-bg)}
+.qitem .s{font-family:var(--kai);font-size:22px;font-weight:700;line-height:1.6}
+.qitem .s .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--accent);text-align:center;color:var(--violet);padding:0 4px}
+.qitem .py,.qitem .tr{display:block;font-size:13px}
+.qitem .sit{font-size:15px;font-weight:700}
+.qitem .n{display:inline-block;width:24px;height:24px;border:1.4px solid var(--ink);border-radius:50%;text-align:center;font-size:12px;line-height:21px;margin-right:6px;background:var(--paper);font-family:var(--sans);font-weight:800;vertical-align:middle}
+.opts{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.opts button{font-family:var(--kai);font-size:21px;font-weight:700;border:1.5px solid var(--ink);background:var(--paper);min-width:56px;padding:3px 12px;cursor:pointer;color:var(--ink);transition:.12s}
+.opts button:hover{transform:translateY(-2px)}
+.opts.long{flex-direction:column;align-items:stretch}
+.opts.long button{text-align:left;font-size:19px;padding:6px 12px}
+.opts button.right{background:var(--ok-bg);border-color:var(--ok)}
+.opts button.wrong{background:var(--bad-bg);border-color:var(--accent);text-decoration:line-through;opacity:.7}
+.opts button[disabled]{cursor:default;transform:none}
+.why{font-size:13.5px;margin-top:8px;color:var(--accent);font-weight:600;display:none}
+.qitem.ok .why,.qitem.done .why{display:block}
+.fb{font-size:13px;font-weight:800;margin-top:6px;min-height:0}
+.fb.ok{color:var(--ok)}.fb.bad{color:var(--accent)}
+.trw{display:grid;grid-template-columns:1fr;gap:6px}
+.trw .ru{font-weight:800;font-size:15px}
+.trw .src{font-family:var(--kai);font-size:21px;font-weight:700}
+.frame{display:inline-block;font-family:var(--kai);font-size:16px;font-weight:700;border:1.6px solid var(--accent);color:var(--accent);padding:0 9px;border-radius:4px;margin-left:6px;background:rgba(142,47,94,.06)}
+.trw .hint{font-size:12.5px;color:var(--ink-soft)}
+.trw .hint .zh{font-size:15px;font-weight:700;color:var(--ink)}
+.trw input,.trw textarea{width:100%;font-family:var(--kai);font-size:20px}
+.trw textarea.ru-in{font-family:var(--sans);font-size:15px;min-height:46px;resize:vertical}
+/* ключи учителя */
+.kbox{display:none}
+body.keymode .kbox{display:block;margin-top:8px;font-size:13px;border:1.4px dashed var(--violet);background:rgba(122,74,140,.08);padding:5px 9px;color:var(--ink)}
+body.keymode .kbox::before{content:"🔑 ";}
+body.keymode .kbox .zh{font-size:17px;font-weight:700}
+#keyBadge{position:fixed;left:14px;bottom:14px;z-index:95;background:var(--violet);color:#fff;font-weight:800;font-size:12px;padding:6px 12px;border-radius:99px;display:none;box-shadow:3px 3px 0 rgba(48,23,40,.25)}
+body.keymode #keyBadge{display:block}
+/* фишки */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;min-height:40px}
+.chips button{font-family:var(--kai);font-size:20px;font-weight:700;border:1.5px solid var(--ink);background:var(--paper);padding:2px 11px;cursor:pointer;color:var(--ink);border-radius:4px;transition:.12s}
+.chips button:hover{transform:translateY(-2px)}
+.chips.ans{border:1.6px dashed var(--accent);background:rgba(255,250,227,.8);padding:6px;border-radius:4px}
+.chips.ans button{background:var(--ink);color:var(--sheet)}
+.chips.ans:empty::before{content:"нажимайте на блоки снизу по порядку";font-size:12.5px;color:var(--ink-soft);font-weight:700;padding:6px}
+/* сборка слова */
+.bld{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+@media (max-width:640px){.bld{grid-template-columns:1fr}}
+.slots{display:flex;gap:6px;align-items:center}
+.slot{font-family:var(--kai);font-size:24px;font-weight:700;border:1.8px dashed var(--accent);background:var(--paper);min-width:58px;height:50px;padding:0 10px;cursor:pointer;color:var(--accent);border-radius:4px}
+.slot.set{border-style:solid;background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.slot:not(.set){font-family:var(--sans);font-size:13px;font-weight:800}
+.plus{font-weight:800;color:var(--ink-soft)}
+#pop{position:absolute;z-index:80;background:var(--sheet);border:1.8px solid var(--ink);box-shadow:5px 5px 0 rgba(142,47,94,.25);padding:8px;display:none;max-width:360px;flex-wrap:wrap;gap:5px}
+#pop.on{display:flex}
+#pop button{font-family:var(--kai);font-size:20px;font-weight:700;border:1.4px solid var(--ink);background:var(--paper);padding:2px 10px;cursor:pointer;color:var(--ink)}
+#pop button:hover{background:var(--ink);color:var(--sheet)}
+#pop .ph{width:100%;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+/* ошибки */
+.tok{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.tok button{font-family:var(--kai);font-size:22px;font-weight:700;border:1.4px solid transparent;background:transparent;padding:1px 5px;cursor:pointer;color:var(--ink);border-radius:4px}
+.tok button:hover{border-color:var(--ink);background:var(--paper)}
+.tok button.miss{border-color:var(--accent);background:var(--bad-bg)}
+.tok button.hit{border-color:var(--ok);background:var(--ok-bg);color:var(--accent);text-decoration:line-through}
+.tok .pt{font-family:var(--kai);font-size:22px;font-weight:700}
+.fix{display:none;margin-top:6px;font-size:13.5px}
+.fix .zh{font-size:19px;font-weight:700}
+.qitem.done .fix{display:block}
+/* мемори */
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:660px;margin:0 auto}
+@media (max-width:560px){.mem{grid-template-columns:repeat(3,1fr)}}
+.mc{perspective:800px;height:108px;cursor:pointer}
+.mc .mi{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.mc.up .mi,.mc.got .mi{transform:rotateY(180deg)}
+.mc .fa{position:absolute;inset:0;backface-visibility:hidden;border:1.6px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+.mc .fa.f{background:var(--ink);background-image:repeating-linear-gradient(45deg,rgba(255,237,168,.1) 0 6px,transparent 6px 12px);color:var(--paper);font-family:var(--kai);font-size:30px}
+.mc .fa.b{background:var(--sheet);transform:rotateY(180deg)}
+.mc .fa.b .c{font-family:var(--kai);font-size:26px;font-weight:700;line-height:1.1}
+.mc .fa.b .r{font-size:12.5px;font-weight:800;line-height:1.25}
+.mc.got .fa.b{background:var(--ok-bg);border-color:var(--ok)}
+/* объявление */
+.notice{background:var(--parch);border:1.8px solid var(--ink);padding:26px 26px 20px;position:relative;box-shadow:inset 0 0 60px rgba(201,143,12,.18)}
+.notice h3{font-family:var(--kai);font-size:34px;text-align:center;letter-spacing:.2em}
+.notice .sub{text-align:center;display:block;font-family:var(--gar);font-style:italic;font-size:17px}
+.notice .ln{font-family:var(--kai);font-size:21px;font-weight:600;line-height:2.15;margin-top:6px}
+.notice .ln .py,.notice .ln .tr{display:block;font-family:var(--sans);font-size:13px;line-height:1.35;margin:-4px 0 6px}
+.notice .ln .tr{font-family:var(--gar);font-size:15.5px;font-style:italic}
+.notice .nh{font-family:var(--sans);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:14px}
+.notice .pin2{position:absolute;top:-14px;left:50%;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#c45a8a,#8e2f5e 60%,#5a1c3b);box-shadow:2px 3px 4px rgba(48,23,40,.3)}
+.gp{font-family:var(--kai);font-size:19px;font-weight:700;border:1.6px dashed var(--accent);background:var(--paper);min-width:56px;padding:0 8px;cursor:pointer;color:var(--accent);border-radius:3px;margin:0 2px;line-height:1.5}
+.gp.set{border-style:solid;background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.gp.ok{background:var(--ok-bg);color:var(--ok);border-color:var(--ok)}
+.gp.bad{background:var(--bad-bg);color:var(--accent);border-color:var(--accent)}
+/* чат */
+.chat{max-width:640px;margin:0 auto;background:#fbe9b0;border:1.8px solid var(--ink);padding:14px;display:flex;flex-direction:column;gap:10px;background-image:radial-gradient(rgba(48,23,40,.07) 1px,transparent 1px);background-size:14px 14px}
+.chat .top{text-align:center;font-weight:800;font-size:13px;border-bottom:1.4px solid var(--ink);padding-bottom:8px;margin:-2px -2px 4px}
+.chat .top .zh{font-size:17px}
+.bub{max-width:88%;border:1.5px solid var(--ink);background:var(--sheet);padding:8px 12px;position:relative;align-self:flex-start;border-radius:2px 12px 12px 12px}
+.bub.me{align-self:flex-end;background:#f3dbe6;border-radius:12px 2px 12px 12px}
+.bub .who{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+.bub .zl{font-family:var(--kai);font-size:20px;font-weight:700;line-height:1.85}
+.bub .py,.bub .tr{display:block;font-size:12.5px}
+/* письмо */
+.wq{margin-bottom:16px}
+.wq .q{font-family:var(--kai);font-size:21px;font-weight:700}
+.wq .q small{font-family:var(--sans);font-size:11px;font-weight:800;color:var(--accent);border:1.2px solid var(--accent);padding:0 7px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.wq .py,.wq .tr{display:block;font-size:13px}
+.wq textarea{width:100%;margin-top:6px;min-height:58px;font-family:var(--kai);font-size:19px;resize:vertical}
+/* резюме */
+.cvwrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.cvwrap{grid-template-columns:1fr}}
+.cvform label{display:block;font-size:12.5px;font-weight:800;margin-top:10px}
+.cvform label .zh{font-size:16px}
+.cvform .inp,.cvform textarea{width:100%;margin-top:3px;font-family:var(--kai);font-size:17px}
+.cvform textarea{min-height:56px;resize:vertical;border:1.6px solid var(--ink);background:var(--sheet);padding:8px 12px;border-radius:4px;color:var(--ink);outline:none}
+.cvcard{background:#fff;border:1.8px solid var(--ink);padding:22px 22px 18px;box-shadow:6px 6px 0 rgba(142,47,94,.18);position:relative;font-family:var(--kai)}
+.cvcard h3{text-align:center;font-size:30px;letter-spacing:.5em;border-bottom:2.4px solid var(--ink);padding-bottom:8px;margin-bottom:10px}
+.cvcard .ph{position:absolute;right:22px;top:66px;width:74px;height:96px;border:1.4px dashed var(--ink-soft);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:11px;color:var(--ink-soft);text-align:center;background:var(--sheet)}
+.cvcard .row{font-size:17px;margin:4px 0;padding-right:90px}
+.cvcard .row b{color:var(--accent);margin-right:6px}
+.cvcard .blk{margin-top:10px}
+.cvcard .blk .bt{font-size:16px;font-weight:700;background:var(--ink);color:var(--paper);display:inline-block;padding:0 10px;margin-bottom:4px}
+.cvcard .blk div{font-size:17px;white-space:pre-wrap;line-height:1.6}
+
+footer{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:24px 24px 46px 92px;color:var(--ink-soft);font-size:13px;border-top:1.6px solid var(--ink)}
+footer .cp{font-weight:800;color:var(--accent);font-size:14px;margin-top:6px}
+@media (max-width:860px){header,main,footer{padding-left:24px}.binder{display:none}}
+@media print{#bar,#sky,nav,.wm,.glow,#plane,#ant,.hdeco,.grid-bg,body::before,.ornament,#keyBadge{display:none!important}body{background:#fff}.panel{box-shadow:none}section.task{break-inside:auto}.reveal{opacity:1;transform:none}}
+/* 练: блоки по конструкциям */
+.xblk{margin-top:30px}
+.xh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1.6px solid var(--ink);padding-bottom:6px;margin-bottom:8px}
+.xh h3{font-family:var(--gar);font-size:23px;font-weight:700;flex:1;min-width:200px;display:flex;align-items:center;gap:10px}
+.xh h3::before{content:"";width:16px;height:16px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z' fill='%238e2f5e'/%3E%3C/svg%3E") center/contain no-repeat}
+.xsub{font-family:var(--gar);font-style:italic;font-size:15.5px;color:var(--ink-soft);margin-bottom:14px;max-width:780px}
+.xsub .zh{font-style:normal;color:var(--ink);font-size:16px}
+.gplinks{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 6px}
+.gplinks a{text-decoration:none}
+.gplinks .zh{font-size:14px}
+a.btn{text-decoration:none;display:inline-block}
+.gpnav a{min-width:130px}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div><div class="glow"></div><div class="wm">聘</div><div id="sky" aria-hidden="true"></div>
+<div id="tip"><div class="c"></div><div class="p"></div><div class="r"></div></div>
+<div id="pop"></div>
+<div id="keyBadge">🔑 режим преподавателя · ключи видны</div>
+
+<div id="bar"><div class="bar-in">
+  <span class="ttl">求职 · 语法 + 练习</span>
+  <button class="tg on" id="gPy">拼音 везде</button>
+  <button class="tg on" id="gTr">перевод везде</button>
+  <div class="pg"><div class="track"><i id="pgBar"></i></div><span id="pgTxt">0%</span></div>
+  <button class="tg" id="gPrint">печать</button>
+  <button class="tg" id="gReset">сбросить</button>
+</div></div>
+
+<header>
+  <svg id="plane" viewBox="0 0 120 70" aria-hidden="true">
+    <path d="M4 40 L116 6 L70 64 L56 44 Z" fill="#fffae3" stroke="#301728" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M116 6 L56 44 L52 60 L62 48" fill="#f2d679" stroke="#301728" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M14 38 L58 26 M18 42 L46 35" stroke="#8e2f5e" stroke-width="1" opacity=".6"/>
+    <text x="40" y="38" font-size="9" fill="#8e2f5e" font-family="KaiTi,STKaiti,serif" font-weight="700" transform="rotate(-16 40 38)">简历</text>
+  </svg>
+  <div class="hdeco h-clip" aria-hidden="true"><svg viewBox="0 0 30 80"><path d="M10 70 V16 C10 6 24 6 24 16 V62 C24 72 4 72 4 62 V22" fill="none" stroke="#7a4a8c" stroke-width="3" stroke-linecap="round"/></svg></div>
+  <div class="hdeco h-cv" aria-hidden="true"><svg viewBox="0 0 150 196">
+    <rect x="4" y="4" width="142" height="188" rx="3" fill="#fffae3" stroke="#301728" stroke-width="1.8"/>
+    <text x="75" y="30" text-anchor="middle" font-size="18" font-weight="900" fill="#301728" font-family="KaiTi,STKaiti,serif" letter-spacing="8">简历</text>
+    <line x1="16" y1="40" x2="134" y2="40" stroke="#301728" stroke-width="1.6"/>
+    <rect x="98" y="50" width="36" height="46" fill="#fbe7a6" stroke="#301728" stroke-width="1.2"/>
+    <circle cx="116" cy="66" r="8" fill="none" stroke="#8e2f5e" stroke-width="1.3"/><path d="M104 94 C106 80 126 80 128 94" fill="none" stroke="#8e2f5e" stroke-width="1.3"/>
+    <g stroke="#301728" stroke-width="1.2" opacity=".55"><line x1="16" y1="56" x2="88" y2="56"/><line x1="16" y1="66" x2="80" y2="66"/><line x1="16" y1="76" x2="86" y2="76"/><line x1="16" y1="86" x2="70" y2="86"/></g>
+    <rect x="16" y="106" width="44" height="11" fill="#301728"/><text x="38" y="115" text-anchor="middle" font-size="8.5" fill="#FFEDA8" font-family="KaiTi,STKaiti,serif">教育经历</text>
+    <g stroke="#301728" stroke-width="1.2" opacity=".55"><line x1="16" y1="128" x2="134" y2="128"/><line x1="16" y1="138" x2="120" y2="138"/></g>
+    <rect x="16" y="150" width="44" height="11" fill="#301728"/><text x="38" y="159" text-anchor="middle" font-size="8.5" fill="#FFEDA8" font-family="KaiTi,STKaiti,serif">实习经历</text>
+    <g stroke="#301728" stroke-width="1.2" opacity=".55"><line x1="16" y1="172" x2="134" y2="172"/><line x1="16" y1="182" x2="104" y2="182"/></g>
+  </svg></div>
+  <div class="hdeco h-seal" aria-hidden="true"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="38" fill="none" stroke="#8e2f5e" stroke-width="3"/><circle cx="42" cy="42" r="31" fill="rgba(142,47,94,.07)" stroke="#8e2f5e" stroke-width="1"/><text x="42" y="40" text-anchor="middle" font-size="22" font-weight="900" fill="#8e2f5e" font-family="KaiTi,STKaiti,serif">录用</text><text x="42" y="60" text-anchor="middle" font-size="10" font-weight="800" fill="#8e2f5e" font-family="sans-serif" letter-spacing="2">OFFER</text></svg></div>
+  <div class="hdeco h-spk" aria-hidden="true"><svg viewBox="0 0 60 60"><path d="M22 6 C23 18 26 21 38 22 C26 23 23 26 22 38 C21 26 18 23 6 22 C18 21 21 18 22 6Z" fill="none" stroke="#301728" stroke-width="2.2" stroke-linejoin="round"/><path d="M46 34 C46.6 41 48 42.4 55 43 C48 43.6 46.6 45 46 52 C45.4 45 44 43.6 37 43 C44 42.4 45.4 41 46 34Z" fill="none" stroke="#301728" stroke-width="2" stroke-linejoin="round"/></svg></div>
+  <svg id="ant" viewBox="0 0 44 24" aria-hidden="true"><g stroke="#301728" stroke-width="1.3" fill="none" stroke-linecap="round"><path class="lg" d="M16 14 L11 22 M22 14 L22 23 M28 14 L33 22"/><path class="lg lg2" d="M16 14 L12 6 M28 14 L32 6"/><path d="M38 9 C41 5 43 4 43 4 M38 9 C42 8 44 9 44 9"/></g><ellipse cx="10" cy="13" rx="7" ry="5" fill="#301728"/><ellipse cx="22" cy="13" rx="5" ry="3.6" fill="#301728"/><circle cx="34" cy="11" r="4" fill="#301728"/></svg>
+
+  <div class="stamp">ГРАММАТИКА · ЛЕКСИКА · ПРАКТИКА</div><br>
+  <h1>找工作<svg class="doodle" viewBox="0 0 400 26" preserveAspectRatio="none"><path d="M4 16 C60 6 120 22 190 12 C250 4 320 20 396 10 M30 22 C110 14 230 24 360 18"/></svg><span class="latin">поиск работы: резюме, собеседование и шесть конструкций</span></h1>
+  <p class="lead">Как сказать «я <i>не особо</i> разбираюсь» и не прозвучать грубо? Почему <span class="zh">作为老师，学生都喜欢他</span> — ошибка? Чем <span class="zh">固然</span> отличается от <span class="zh">虽然</span>? Разбираем <span class="zh">不怎么 · 作为 · 有利于 · 与其……不如 · 固然……但是 · 是否 / 能否</span>, а затем отрабатываем их на словах из уроков <i>«Seeking Employment»</i> и <i>«我在准备自己的简历»</i>. Новые слова отмечены <span class="nw" data-c="点" data-p="diǎn" data-r="точка — наведите курсор на слово с точками">точками</span>: наведите курсор или нажмите — появятся пиньинь и перевод.</p>
+  <nav>
+    <a href="#dict"><b>词</b>Словарь</a>
+    <a href="#gram"><b>一</b>Грамматика</a>
+    <a href="#gp"><b>练</b>По конструкциям</a>
+    <a href="#e1"><b>二</b>Какая конструкция</a>
+    <a href="#e2"><b>三</b>Официально?</a>
+    <a href="#e3"><b>四</b>Логика</a>
+    <a href="#e4"><b>五</b>Перестройте</a>
+    <a href="#e5"><b>六</b>Соберите фразу</a>
+    <a href="#e6"><b>七</b>Ошибки</a>
+    <a href="#e7"><b>八</b>Переводы</a>
+    <a href="#v1"><b>九</b>Соберите слово</a>
+    <a href="#v2"><b>十</b>Вакансия</a>
+    <a href="#v3"><b>十一</b>Сочетаемость</a>
+    <a href="#v4"><b>十二</b>Мемори</a>
+    <a href="#v5"><b>十三</b>Переписка</a>
+    <a href="#w"><b>十四</b>Пишем сами</a>
+    <a href="#cv"><b>十五</b>Моё 简历</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ СЛОВАРЬ ============ -->
+<section class="task" id="dict">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">词</div><h2>Словарь урока</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Конструкции, слова двух уроков о поиске работы и новые слова из примеров. Звёздочкой ★ отмечайте трудные слова. Свои слова можно добавить импортом (CSV, TSV или JSON), а список выгрузить в Anki.</p>
+  <div class="panel"><span class="tape"></span>
+    <div class="dict-tools">
+      <input class="inp" id="dSearch" placeholder="Поиск: иероглиф, пиньинь без тонов (jianli), перевод…">
+      <button class="btn small" id="dStar">★ только избранные</button>
+    </div>
+    <div class="dtabs" id="dTabs"></div>
+    <div class="dict-tools">
+      <span class="bank-head">Экспорт:</span>
+      <button class="btn small" id="dCsv">CSV</button><button class="btn small" id="dAnki">Anki TSV</button><button class="btn small" id="dJson">JSON</button>
+      <span class="bank-head" style="margin-left:10px">Импорт:</span>
+      <label class="btn small accent" style="cursor:pointer">загрузить файл<input type="file" id="dImp" accept=".csv,.tsv,.txt,.json" hidden></label>
+      <button class="btn small" id="dImpClear">убрать добавленные</button>
+      <span class="msg" id="dMsg"></span>
+    </div>
+    <div class="dlist" id="dList"></div>
+    <div class="foot">Формат импорта: строка <b>иероглиф, пиньинь, перевод</b> (через запятую, точку с запятой или табуляцию) либо JSON-массив вида [{"c":"…","p":"…","r":"…"}]. Переводы — по БКРС.</div>
+
+    <div class="subhead">Карточки для повторения</div>
+    <div class="fc-set">
+      <select id="fcDir"><option value="zh">汉字 → русский</option><option value="ru">русский → 汉字</option><option value="py">пиньинь → 汉字</option></select>
+      <select id="fcSrc"><option value="all">все слова</option><option value="g">грамматика</option><option value="u">урок «Seeking Employment»</option><option value="l">урок «我在准备自己的简历»</option><option value="w">слова из примеров</option><option value="star">только ★</option><option value="new">ещё не выученные</option></select>
+      <select id="fcN"><option value="10">10 карточек</option><option value="20">20 карточек</option><option value="999">все</option></select>
+      <label><input type="checkbox" id="fcShuf" checked> перемешать</label>
+      <label><input type="checkbox" id="fcHint"> пиньинь на лицевой стороне</label>
+      <button class="btn small primary" id="fcStart">▶ начать</button>
+    </div>
+    <div class="fc-stage">
+      <div class="fcard" id="fcCard"><div class="in"><div class="face front" id="fcFront"><div class="mid">Нажмите «начать»</div><div class="hint">карточка переворачивается по клику</div></div><div class="face back" id="fcBack"></div></div></div>
+      <div class="row-btns" style="margin:0"><button class="btn accent" id="fcAgain" disabled>↺ ещё повторю</button><button class="btn primary" id="fcKnow" disabled>✓ знаю</button></div>
+      <div class="fc-info" id="fcInfo"></div>
+    </div>
+    <div class="culture"><span class="ch-t">文化 · 急得像热锅上的蚂蚁</span><b class="zh">急得像热锅上的蚂蚁</b> <span class="py">jí de xiàng rè guō shang de mǎyǐ</span> — «волнуется, как муравей на раскалённом котле». Так говорят о человеке, который мечется и места себе не находит: ждёт звонка после собеседования, не может найти паспорт перед поездом. Русские аналоги — «как на иголках», «как уж на сковородке». Слово <span class="zh">蚂蚁</span> из списка урока встречается чаще всего именно в этом выражении.</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><svg viewBox="0 0 220 30"><path d="M10 15 H88 M132 15 H210" stroke="#301728" stroke-width="1"/><path d="M110 3 C111 11 114 14 122 15 C114 16 111 19 110 27 C109 19 106 16 98 15 C106 14 109 11 110 3Z" fill="#8e2f5e"/><circle cx="92" cy="15" r="2.4" fill="#c98f0c"/><circle cx="128" cy="15" r="2.4" fill="#c98f0c"/><path d="M40 15 C46 6 56 6 60 15 C56 24 46 24 40 15Z M160 15 C166 6 176 6 180 15 C176 24 166 24 160 15Z" fill="none" stroke="#301728" stroke-width="1"/></svg></div>
+
+<!-- ============ ГРАММАТИКА ============ -->
+<section class="task" id="gram">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">一</div><h2>Шесть конструкций</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">В каждой карточке есть формула, объяснение, примеры <b>из вашего конспекта</b> (с жёлтой меткой), новые примеры на тему поиска работы и ловушки для русскоговорящих. Нажмите на «стикер», чтобы перейти к нужной конструкции.</p>
+  <div class="panel reveal"><span class="tape"></span>
+    <div class="rule">Все шесть конструкций делятся на две группы. <b>Разговорная:</b> <span class="zh">不怎么 / 没怎么</span> — смягчённое отрицание. <b>Книжно-деловые:</b> <span class="zh">作为, 有利于, 与其……不如, 固然……但是, 是否 / 能否</span> — они звучат в собеседованиях, письмах, объявлениях о вакансиях и сочинениях на HSK. Поэтому они и собраны в уроке о поиске работы.</div>
+    <div class="gnav" id="gNav"></div>
+    <div id="gWrap"></div>
+    <div class="warn"><span class="h">Пять ошибок, которые чаще всего делают русскоговорящие</span><ol>
+      <li><b>Двойной вопрос.</b> <s class="zh">您是否同意吗？</s> → <span class="zh">您是否同意？</span> Слово <span class="zh">否</span> уже значит «или нет».</li>
+      <li><b>«Как учитель…» без нужного подлежащего.</b> <s class="zh">作为老师，学生们都喜欢他。</s> → <span class="zh">作为老师，他很受学生欢迎。</span></li>
+      <li><b>Русский порядок «лучше B, чем A».</b> После <span class="zh">与其</span> идёт то, от чего отказываемся, а после <span class="zh">不如</span> — то, что выбираем.</li>
+      <li><b>Лишний 对.</b> <s class="zh">有利于对学习</s> → <span class="zh">有利于学习</span> = <span class="zh">对学习有利</span>.</li>
+      <li><b>«Не очень» + 很.</b> <s class="zh">不怎么很好</s> → <span class="zh">不怎么好</span>.</li>
+    </ol></div>
+    <div class="row-btns" style="justify-content:center;margin-top:22px"><a class="btn accent" href="#gp">练 · Перейти к упражнениям по каждой конструкции →</a></div>
+    <div class="culture"><span class="ch-t">文化 · 万事开头难</span>На полях конспекта записана поговорка <b class="zh">万事开头难</b> <span class="py">wànshì kāitóu nán</span> — «всякое дело трудно начать», по-русски «лиха беда начало» или «трудно только начать». Её говорят новичку на первой работе или студенту, который <span class="zh">刚开始学汉语，说得不怎么好</span>. Часто добавляют продолжение: <span class="zh">万事开头难，只要坚持就会成功</span> «трудно только начать: если не бросать, всё получится».</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><svg viewBox="0 0 220 30"><path d="M10 15 H88 M132 15 H210" stroke="#301728" stroke-width="1"/><path d="M110 3 C111 11 114 14 122 15 C114 16 111 19 110 27 C109 19 106 16 98 15 C106 14 109 11 110 3Z" fill="#8e2f5e"/><circle cx="92" cy="15" r="2.4" fill="#c98f0c"/><circle cx="128" cy="15" r="2.4" fill="#c98f0c"/></svg></div>
+
+<div id="gpHost"></div>
+
+<div class="ornament" aria-hidden="true"><svg viewBox="0 0 220 30"><path d="M10 15 H88 M132 15 H210" stroke="#301728" stroke-width="1"/><path d="M110 3 C111 11 114 14 122 15 C114 16 111 19 110 27 C109 19 106 16 98 15 C106 14 109 11 110 3Z" fill="#8e2f5e"/><circle cx="92" cy="15" r="2.4" fill="#c98f0c"/><circle cx="128" cy="15" r="2.4" fill="#c98f0c"/></svg></div>
+
+<!-- ============ E1 ============ -->
+<section class="task" id="e1" data-tr="0">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">二</div><h2>Какая конструкция нужна?</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Шестнадцать фраз, в каждой пропуск. Подсказка спрятана в самой фразе: что стоит после пропуска (прилагательное или глагол), есть ли пара (<span class="zh">不如, 但是</span>), прошлое это или привычка. Если вариант неверный, он зачёркивается и можно выбрать снова. Каждый промах попадает в счётчик. Перевод по умолчанию скрыт.</p>
+  <div class="panel">
+    <div id="e1Wrap"></div>
+    <div class="score"><span id="e1Count"></span><div class="bar"><i id="e1Bar"></i></div><span class="err" id="e1Err"></span><button class="btn small" id="e1Reset">сбросить</button></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E2 ============ -->
+<section class="task" id="e2">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">三</div><h2>Официально или по-дружески?</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Прочитайте ситуацию и выберите <b>единственный</b> вариант, который и грамматически верен, и подходит по стилю. В неверных вариантах может быть ошибка, а может быть неуместный стиль.</p>
+  <div class="panel">
+    <div id="e2Wrap"></div>
+    <div class="score"><span id="e2Count"></span><div class="bar"><i id="e2Bar"></i></div><span class="err" id="e2Err"></span><button class="btn small" id="e2Reset">сбросить</button></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E3 ============ -->
+<section class="task" id="e3" data-tr="0">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">四</div><h2>Логичное продолжение</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Начало фразы уже задаёт логику: <span class="zh">固然</span> обещает поворот, <span class="zh">与其</span> — выбор в пользу второго варианта, а <span class="zh">作为</span> — определённое подлежащее. Выберите продолжение, которое подходит и по смыслу, и по грамматике.</p>
+  <div class="panel">
+    <div id="e3Wrap"></div>
+    <div class="score"><span id="e3Count"></span><div class="bar"><i id="e3Bar"></i></div><span class="err" id="e3Err"></span><button class="btn small" id="e3Reset">сбросить</button></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E4 ============ -->
+<section class="task" id="e4">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">五</div><h2>Перестройте фразу</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Перепишите фразу иероглифами с конструкцией из рамки так, чтобы смысл не изменился. Знаки препинания при проверке не учитываются. Если ответ не принят, проверка подскажет, в чём проблема: нет нужной конструкции или она есть, но построена неверно.</p>
+  <div class="panel">
+    <div id="e4Wrap"></div>
+    <div class="row-btns"><button class="btn accent" id="e4Check">Проверить все</button><button class="btn small" id="e4Clr">очистить</button><span class="msg" id="e4Res"></span></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E5 ============ -->
+<section class="task" id="e5">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">六</div><h2>Соберите предложение</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Нажимайте на блоки в правильном порядке. Чтобы вернуть блок, нажмите на него в верхней строке. Где позиция подлежащего гибкая, проверка примет оба порядка.</p>
+  <div class="panel">
+    <div id="e5Wrap"></div>
+    <div class="row-btns"><button class="btn accent" id="e5Check">Проверить</button><button class="btn small" id="e5Clr">очистить</button><span class="msg" id="e5Res"></span></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E6 ============ -->
+<section class="task" id="e6">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">七</div><h2>Найдите ошибку — нажмите на неё</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">В каждой фразе одно лишнее или неверное слово. Перевод показывает, что хотел сказать автор. Нажмите на ошибку: если попадёте, появятся исправленная фраза и правило. Каждый промах считается.</p>
+  <div class="panel">
+    <div id="e6Wrap"></div>
+    <div class="score"><span id="e6Count"></span><div class="bar"><i id="e6Bar"></i></div><span class="err" id="e6Err"></span><button class="btn small" id="e6Reset">сбросить</button></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ E7 ============ -->
+<section class="task" id="e7">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">八</div><h2>Переводы</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub"><b>8.1</b> — с русского на китайский, иероглифами. Проверка принимает разные верные варианты, знаки препинания не важны. <b>8.2</b> — с китайского на русский. Здесь автопроверки нет: перевод проверит преподаватель по скриншоту.</p>
+  <div class="panel">
+    <div class="subhead" style="margin-top:0">8.1 · На китайский</div>
+    <div id="e7Wrap"></div>
+    <div class="row-btns"><button class="btn accent" id="e7Check">Проверить все</button><button class="btn small" id="e7Clr">очистить</button><span class="msg" id="e7Res"></span></div>
+    <div class="subhead">8.2 · На русский</div>
+    <div id="e7bWrap"></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><svg viewBox="0 0 220 30"><path d="M10 15 H88 M132 15 H210" stroke="#301728" stroke-width="1"/><path d="M110 3 C111 11 114 14 122 15 C114 16 111 19 110 27 C109 19 106 16 98 15 C106 14 109 11 110 3Z" fill="#8e2f5e"/><circle cx="92" cy="15" r="2.4" fill="#c98f0c"/><circle cx="128" cy="15" r="2.4" fill="#c98f0c"/></svg></div>
+
+<!-- ============ V1 ============ -->
+<section class="task" id="v1">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">九</div><h2>Соберите слово по описанию</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Все слова — из двух уроков. В левой ячейке выберите первый иероглиф, в правой — второй. Осторожно: <span class="zh">推</span> и <span class="zh">经</span> дают по два разных слова, а <span class="zh">实</span> и <span class="zh">工</span> бывают и первым, и вторым слогом.</p>
+  <div class="panel">
+    <div id="v1Wrap"></div>
+    <div class="row-btns"><button class="btn accent" id="v1Check">Проверить</button><button class="btn small" id="v1Clr">очистить</button><span class="msg" id="v1Res"></span></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ V2 ============ -->
+<section class="task" id="v2" data-tr="0">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十</div><h2>Объявление о вакансии · <span class="zh">招聘启事</span></h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Учебный центр ищет сотрудников. Нажмите на пропуск и выберите слово из банка (все 16 слов). Каждое слово подходит только в одно место. Перевод по умолчанию скрыт.</p>
+  <div class="panel">
+    <div class="notice" id="v2Wrap"></div>
+    <div class="row-btns" style="justify-content:center"><button class="btn accent" id="v2Check">Проверить</button><button class="btn small" id="v2Clr">очистить</button><span class="msg" id="v2Res"></span></div>
+    <div class="culture"><span class="ch-t">文化 · 户口 и «решаем вопрос с пропиской»</span><b class="zh">户口</b> <span class="py">hùkǒu</span> — система постоянной регистрации по месту жительства. От неё во многом зависят доступ к местным школам для детей, медицинская страховка и покупка жилья. Получить <span class="zh">北京户口</span> или <span class="zh">上海户口</span> трудно, поэтому фраза <span class="zh">可以帮助解决户口</span> «поможем с пропиской» в объявлении о вакансии — серьёзное преимущество. Такую помощь чаще предлагают госпредприятия и университеты. Иностранцам 户口 не оформляют: у них разрешение на работу и вид на жительство.</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ V3 ============ -->
+<section class="task" id="v3">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十一</div><h2>Что с чем сочетается</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">В китайском у существительного есть «свои» глаголы: резюме не «посылают», а буквально <i>бросают</i> (<span class="zh">投简历</span>), а факс не «берут», а <i>принимают</i> (<span class="zh">接传真</span>). Выберите слово, которое естественно стоит в пропуске.</p>
+  <div class="panel">
+    <div id="v3Wrap"></div>
+    <div class="score"><span id="v3Count"></span><div class="bar"><i id="v3Bar"></i></div><span class="err" id="v3Err"></span><button class="btn small" id="v3Reset">сбросить</button></div>
+    <div class="culture"><span class="ch-t">文化 · 递 — обеими руками</span>Глагол <b class="zh">递</b> <span class="py">dì</span> «подать, вручить» в деловом Китае связан с этикетом: резюме, визитку или документы протягивают <b>двумя руками</b>, повернув текстом к собеседнику, и так же двумя руками принимают. Визитку <span class="zh">名片</span> не убирают сразу в карман: её рассматривают и кладут перед собой на стол. На собеседовании это замечают не меньше, чем ответы на вопросы.</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ V4 ============ -->
+<section class="task" id="v4">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十二</div><h2>Мемори: слово и перевод</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Переворачивайте по две карточки и ищите пары «китайское слово — русский перевод». В каждой партии восемь случайных слов из двух уроков. Чем меньше ходов, тем лучше.</p>
+  <div class="panel">
+    <div class="mem" id="memGrid"></div>
+    <div class="score" style="justify-content:center"><span id="memInfo"></span><button class="btn small primary" id="memNew">новая партия ↺</button></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ V5 ============ -->
+<section class="task" id="v5" data-tr="0">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十三</div><h2>Переписка: <span class="zh">面试怎么样？</span></h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Анна вчера ходила на собеседование и рассказывает о нём подруге Сяо Линь в WeChat. Здесь смешаны конструкции и слова урока. Нажмите на пропуск, выберите вариант, затем нажмите «проверить». Перевод скрыт, чтобы не подсказывать.</p>
+  <div class="panel">
+    <div class="chat" id="v5Wrap"></div>
+    <div class="row-btns" style="justify-content:center"><button class="btn accent" id="v5Check">Проверить</button><button class="btn small" id="v5Clr">очистить</button><span class="msg" id="v5Res"></span></div>
+    <div class="culture"><span class="ch-t">文化 · 秋招 и 春招: два сезона охоты за выпускниками</span>В Китае студенты ищут работу не после диплома, а за год до него. Осенью идёт <b class="zh">秋招</b> <span class="py">qiūzhāo</span> — большая кампания найма, когда компании приезжают в вузы, проводят презентации и ярмарки вакансий <span class="zh">双选会</span>. Весной проходит вторая волна, <b class="zh">春招</b>. Статус <span class="zh">应届毕业生</span> «выпускник этого года» очень ценен: многие вакансии открыты только для них. По данным Министерства образования КНР, в 2026 году вузы окончили около <b>12,7 млн</b> человек — рекорд, поэтому конкуренция огромна. Многие выбирают <span class="zh">考公</span> — экзамен на госслужбу ради «железной миски риса» <span class="zh">铁饭碗</span>, то есть стабильной работы на всю жизнь.</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ W ============ -->
+<section class="task" id="w">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十四</div><h2>Пишем сами</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Автопроверки нет. Ответьте на вопросы полными предложениями иероглифами. В рамке указано, какую конструкцию обязательно использовать. Ответы сохраняются в браузере. Затем пришлите скриншот преподавателю.</p>
+  <div class="panel">
+    <div id="wWrap"></div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+<!-- ============ CV ============ -->
+<section class="task" id="cv">
+  <div class="binder"></div>
+  <div class="sec-head"><div class="sec-num">十五</div><h2>Моё 简历</h2><div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div></div>
+  <p class="sec-sub">Составьте короткое резюме на китайском, как в уроке 19. Пишите слева, а справа сразу появится готовый лист. В графе <span class="zh">个人优势</span> используйте хотя бы одну конструкцию урока, например: <span class="zh">作为……，我…… / ……固然……，但是……</span>.</p>
+  <div class="panel">
+    <div class="cvwrap">
+      <div class="cvform" id="cvForm"></div>
+      <div class="cvcard" id="cvCard"></div>
+    </div>
+    <div class="culture"><span class="ch-t">文化 · Каким бывает китайское резюме</span>Китайское <span class="zh">简历</span> обычно умещается на <b>одной странице</b> и почти всегда содержит фото в правом верхнем углу. Порядок разделов привычный: <span class="zh">个人信息 → 教育经历 → 实习经历 → 个人优势 / 自我评价</span>. Студенты обязательно указывают оценки, стипендии и сертификаты: HSK, уровень английского CET-4/6, водительские права. Резюме, которое не соответствует действительности, — <span class="zh">与实际经历不相符</span>, — серьёзный повод для отказа: работодатели проверяют дипломы через государственную базу.</div>
+    <div class="shot">Пришлите скриншот выполненного упражнения</div>
+  </div>
+</section>
+
+</main>
+
+<footer>求职 · 不怎么 · 作为 · 有利于 · 与其……不如 · 固然……但是 · 是否 / 能否 · 万事开头难
+  <div class="cp">© 2026 Максим и Валерия. Все материалы созданы Валерией и Максимом. Все права защищены.</div>
+</footer>
+
+<script>
+/* ========== утилиты ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const $$=(s,r)=>[].slice.call((r||document).querySelectorAll(s));
+const PFX="qzyf1_";
+const S={get(k,d){try{const v=localStorage.getItem(PFX+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+         set(k,v){try{localStorage.setItem(PFX+k,JSON.stringify(v));}catch(e){}}};
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const TONES={'ā':'a','á':'a','ǎ':'a','à':'a','ē':'e','é':'e','ě':'e','è':'e','ī':'i','í':'i','ǐ':'i','ì':'i','ō':'o','ó':'o','ǒ':'o','ò':'o','ū':'u','ú':'u','ǔ':'u','ù':'u','ǖ':'v','ǘ':'v','ǚ':'v','ǜ':'v','ü':'v'};
+function normPy(s){return String(s).toLowerCase().split("").map(c=>TONES[c]||c).join("").replace(/[^a-z0-9v]/g,"");}
+function normZh(s){return String(s).replace(/[\s，。！？、,\.!\?;；:：“”"'‘’—\-…（）()《》]/g,"");}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function download(name,data,type){const b=new Blob([data],{type:type||"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},300);}
+/* ключи хранятся в закодированном виде, чтобы ответы не были видны ни на странице, ни в коде */
+function dec(s){try{const bin=atob(s),k=new TextEncoder().encode(String.fromCharCode(113,122,121,102,50,48,50,54)),b=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)b[i]=bin.charCodeAt(i)^k[i%k.length];return JSON.parse(new TextDecoder().decode(b));}catch(e){return {};}}
+const K=dec("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");
+
+/* ========== новые слова (точки снизу) ========== */
+const NEWW={
+ "待着":["dāizhe","побыть, посидеть (где-либо без дела)"],
+ "集中":["jízhōng","сосредоточить, собрать"],
+ "注意力":["zhùyìlì","внимание"],
+ "突出":["tūchū","выделить, подчеркнуть"],
+ "熬夜":["áoyè","не спать ночь, засиживаться допоздна"],
+ "应届毕业生":["yīngjiè bìyèshēng","выпускник текущего года"],
+ "代表":["dàibiǎo","представитель"],
+ "招聘会":["zhāopìnhuì","ярмарка вакансий"],
+ "看重":["kànzhòng","ценить, придавать большое значение"],
+ "贵公司":["guì gōngsī","ваша (уважаемая) компания"],
+ "面试官":["miànshìguān","интервьюер (тот, кто проводит собеседование)"],
+ "积累":["jīlěi","накапливать"],
+ "研究生":["yánjiūshēng","магистрант; магистратура"],
+ "抱怨":["bàoyuàn","жаловаться, ворчать"],
+ "宝贵":["bǎoguì","ценный, драгоценный"],
+ "员工":["yuángōng","сотрудник, работник"],
+ "负责":["fùzé","отвечать (за что-либо), нести ответственность"],
+ "加班":["jiābān","работать сверхурочно"],
+ "业务":["yèwù","деятельность, дела (компании)"],
+ "不限":["búxiàn","не ограничено, любой"],
+ "责任心":["zérènxīn","чувство ответственности"],
+ "客户":["kèhù","клиент"],
+ "网课":["wǎngkè","онлайн-курс, онлайн-урок"],
+ "面议":["miànyì","обсуждается при встрече (на собеседовании)"],
+ "劳动":["láodòng","труд; 劳动合同 — трудовой договор"],
+ "家长":["jiāzhǎng","родители (учеников)"],
+ "别提了":["biétí le","и не спрашивай! лучше не вспоминать"],
+ "双手":["shuāngshǒu","обе руки, обеими руками"],
+ "实习生":["shíxíshēng","стажёр, практикант"]
+};
+function mk(s){
+  return String(s).replace(/\{([^}]+)\}/g,(m,w)=>`<span class="nw" tabindex="0" data-c="${w}">${w}</span>`)
+    .replace(/\[([^\]]+)\]/g,'<em class="rc">$1</em>');
+}
+
+/* ========== словарь урока ========== */
+const VOC=[
+ /* грамматика */
+ ["不怎么","bù zěnme","не особенно, не очень (смягчённое отрицание)","g"],
+ ["没怎么","méi zěnme","почти не (делал), мало (о прошлом действии)","g"],
+ ["不怎么样","bù zěnmeyàng","так себе, неважно","g"],
+ ["作为","zuòwéi","в качестве, будучи (кем-либо)","g"],
+ ["有利于","yǒulìyú","способствовать, благоприятствовать (чему-либо)","g"],
+ ["不利于","bùlìyú","вредить, неблагоприятно сказываться (на чём-либо)","g"],
+ ["与其……不如……","yǔqí… bùrú…","чем…, лучше (уж)…","g"],
+ ["固然","gùrán","конечно, безусловно (…, но)","g"],
+ ["是否","shìfǒu","ли; да или нет (книжн. = 是不是)","g"],
+ ["能否","néngfǒu","можно ли, в состоянии ли (книжн. = 能不能)","g"],
+ /* урок 14 · Seeking Employment + конспект */
+ ["面试","miànshì","собеседование; проводить собеседование","u"],
+ ["推销","tuīxiāo","продвигать (товар), сбывать","u"],
+ ["分析","fēnxī","анализировать; анализ","u"],
+ ["蚂蚁","mǎyǐ","муравей","u"],
+ ["简历","jiǎnlì","резюме","u"],
+ ["规范","guīfàn","стандартный, по форме; норма, стандарт","u"],
+ ["亮点","liàngdiǎn","изюминка, сильная сторона","u"],
+ ["优势","yōushì","преимущество","u"],
+ ["诚实","chéngshí","честный","u"],
+ ["起码","qǐmǎ","минимальный; как минимум","u"],
+ ["幼稚","yòuzhì","наивный, ребяческий","u"],
+ ["相符","xiāngfú","соответствовать, совпадать","u"],
+ ["即将","jíjiāng","вот-вот, скоро","u"],
+ ["困扰","kùnrǎo","мучить, беспокоить; проблема","u"],
+ ["唯一","wéiyī","единственный","u"],
+ ["出路","chūlù","выход (из положения), перспектива","u"],
+ ["相关","xiāngguān","связанный, соответствующий","u"],
+ ["招聘","zhāopìn","набирать (сотрудников), объявлять вакансию","u"],
+ ["明明","míngmíng","явно, ведь (а между тем…)","u"],
+ ["递","dì","подать, передать (из рук в руки)","u"],
+ ["打击","dǎjī","удар; наносить удар, подрывать (уверенность)","u"],
+ ["搜集","sōují","собирать (сведения, материалы)","u"],
+ ["录用","lùyòng","принять на работу","u"],
+ ["毕业","bìyè","окончить учебное заведение","u"],
+ ["签合同","qiān hétong","подписать договор","u"],
+ ["户口","hùkǒu","прописка, регистрация по месту жительства","u"],
+ ["机会","jīhuì","возможность, шанс","u"],
+ ["急得像热锅上的蚂蚁","jí de xiàng rè guō shang de mǎyǐ","как муравей на раскалённом котле (места себе не находит)","u"],
+ ["万事开头难","wànshì kāitóu nán","лиха беда начало, трудно только начать","u"],
+ /* урок 19 · 我在准备自己的简历 */
+ ["继续","jìxù","продолжать","l"],
+ ["接着","jiēzhe","затем, следом; продолжать","l"],
+ ["专业","zhuānyè","специальность","l"],
+ ["方面","fāngmiàn","сторона, область, аспект","l"],
+ ["律师","lǜshī","адвокат, юрист","l"],
+ ["事务所","shìwùsuǒ","контора, бюро (律师事务所 — юридическая фирма)","l"],
+ ["接","jiē","принимать (звонок, факс); встречать","l"],
+ ["啊","a","частица при перечислении","l"],
+ ["传真","chuánzhēn","факс","l"],
+ ["主管","zhǔguǎn","руководитель, начальник","l"],
+ ["经验","jīngyàn","опыт (знания, навыки)","l"],
+ ["推荐","tuījiàn","рекомендовать; рекомендация","l"],
+ ["推荐信","tuījiànxìn","рекомендательное письмо","l"],
+ ["实习","shíxí","стажировка, практика; проходить стажировку","l"],
+ ["投简历","tóu jiǎnlì","отправлять резюме","l"],
+ ["打工","dǎgōng","подрабатывать","l"],
+ ["工资","gōngzī","зарплата","l"],
+ ["个人","gèrén","личный; индивидуальный","l"],
+ ["信息","xìnxī","информация","l"],
+ ["教育","jiàoyù","образование, воспитание","l"],
+ ["经历","jīnglì","пережитое, опыт (этапы жизни); пережить","l"],
+ ["只要","zhǐyào","стоит только, лишь бы","l"],
+ ["得到","dédào","получить","l"],
+ ["外卖","wàimài","еда на вынос, доставка еды","l"],
+ ["销售","xiāoshòu","продавать; продажи","l"],
+ ["祝","zhù","желать","l"],
+ ["成功","chénggōng","успех; добиться успеха","l"],
+ /* из примеров конспекта */
+ ["安静","ānjìng","тихий, спокойный","w"],
+ ["拍照","pāizhào","фотографировать","w"],
+ ["真正","zhēnzhèng","настоящий, подлинный","w"],
+ ["复习","fùxí","повторять (пройденное)","w"],
+ ["尝尝","chángchang","попробовать (на вкус)","w"]
+].concat(Object.keys(NEWW).map(k=>[k,NEWW[k][0],NEWW[k][1],"w"]));
+const DMAP={};VOC.forEach(v=>DMAP[v[0]]=[v[1],v[2]]);
+const BASE=VOC.map(v=>({c:v[0],p:v[1],r:v[2],t:v[3]}));
+const TABS={all:"все",g:"грамматика",u:"урок 14 · 求职",l:"урок 19 · 简历",w:"слова из примеров",my:"мои слова"};
+function allWords(){return BASE.concat(S.get("imp",[]).map(w=>({c:w.c,p:w.p,r:w.r,t:"my",imp:1})));}
+
+/* ========== tooltip ========== */
+(function(){
+  const tip=$("#tip");let cur=null;
+  function show(el){
+    const c=el.dataset.c||el.textContent;const d=NEWW[c]||DMAP[c]||[el.dataset.p||"",el.dataset.r||""];
+    const p=el.dataset.p||d[0]||"",r=el.dataset.r||d[1]||"";
+    $(".c",tip).textContent=c.length>6?"":c;$(".p",tip).textContent=p;$(".r",tip).textContent=r;
+    const b=el.getBoundingClientRect();tip.classList.add("on");
+    const w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=b.left+b.width/2-w/2;x=Math.max(8,Math.min(x,innerWidth-w-8));
+    let y=b.top-h-10;if(y<60)y=b.bottom+10;
+    tip.style.left=x+"px";tip.style.top=y+"px";cur=el;
+  }
+  function hide(){tip.classList.remove("on");cur=null;}
+  document.addEventListener("mouseover",e=>{const n=e.target.closest(".nw");if(n)show(n);});
+  document.addEventListener("mouseout",e=>{const n=e.target.closest(".nw");if(n&&!n.contains(e.relatedTarget))hide();});
+  document.addEventListener("focusin",e=>{const n=e.target.closest(".nw");if(n)show(n);});
+  document.addEventListener("focusout",e=>{if(e.target.closest(".nw"))hide();});
+  document.addEventListener("click",e=>{const n=e.target.closest(".nw");if(n){e.stopPropagation();cur===n?hide():show(n);}else if(cur)hide();},true);
+  addEventListener("scroll",hide,{passive:true});
+})();
+
+/* ========== переключатели ========== */
+const TG=S.get("tg",{});
+function applyTg(){
+  $$("section.task, .xblk").forEach(s=>{
+    const id=s.id,st=TG[id]||{};
+    const py=st.py!=null?st.py:(s.dataset.py!=="0"),tr=st.tr!=null?st.tr:(s.dataset.tr!=="0");
+    s.classList.toggle("nopy",!py);s.classList.toggle("notr",!tr);
+    const bp=s.querySelector(":scope > .sec-head .tg-py, :scope > .xh .tg-py"),bt=s.querySelector(":scope > .sec-head .tg-tr, :scope > .xh .tg-tr");if(bp)bp.classList.toggle("on",py);if(bt)bt.classList.toggle("on",tr);
+  });
+  const allPy=$$("section.task, .xblk").every(s=>!s.classList.contains("nopy")),allTr=$$("section.task, .xblk").every(s=>!s.classList.contains("notr"));
+  $("#gPy").classList.toggle("on",allPy);$("#gTr").classList.toggle("on",allTr);
+}
+function initTg(){
+  $$("section.task, .xblk").forEach(s=>{
+    const bp=s.querySelector(":scope > .sec-head .tg-py, :scope > .xh .tg-py"),bt=s.querySelector(":scope > .sec-head .tg-tr, :scope > .xh .tg-tr");
+    if(bp)bp.onclick=()=>{TG[s.id]=Object.assign({},TG[s.id],{py:s.classList.contains("nopy")});S.set("tg",TG);applyTg();};
+    if(bt)bt.onclick=()=>{TG[s.id]=Object.assign({},TG[s.id],{tr:s.classList.contains("notr")});S.set("tg",TG);applyTg();};
+  });
+  $("#gPy").onclick=()=>{const v=!$("#gPy").classList.contains("on");$$("section.task, .xblk").forEach(s=>{TG[s.id]=Object.assign({},TG[s.id],{py:v});});S.set("tg",TG);applyTg();};
+  $("#gTr").onclick=()=>{const v=!$("#gTr").classList.contains("on");$$("section.task, .xblk").forEach(s=>{TG[s.id]=Object.assign({},TG[s.id],{tr:v});});S.set("tg",TG);applyTg();};
+  $("#gPrint").onclick=()=>{$$(".reveal").forEach(e=>e.classList.add("in"));window.print();};
+  $("#gReset").onclick=()=>{if(!confirm("Стереть все ответы и настройки этого урока?"))return;try{Object.keys(localStorage).filter(k=>k.indexOf(PFX)===0).forEach(k=>localStorage.removeItem(k));}catch(e){}location.reload();};
+}
+
+/* ========== прогресс ========== */
+const PROG={};
+function prog(id,done,total){PROG[id]=[done,total];let d=0,t=0;Object.keys(PROG).forEach(k=>{d+=PROG[k][0];t+=PROG[k][1];});const p=t?Math.round(d/t*100):0;$("#pgBar").style.width=p+"%";$("#pgTxt").textContent=p+"%";}
+function bar(sel,done,total){const e=$(sel);if(e)e.style.width=(total?done/total*100:0)+"%";}
+
+/* ========== словарь: интерфейс ========== */
+let dTab="all";
+function renderDict(){
+  const q=$("#dSearch").value.trim().toLowerCase(),qp=normPy(q),stars=S.get("star",[]),only=$("#dStar").classList.contains("on");
+  const list=allWords().filter(w=>(dTab==="all"||w.t===dTab)&&(!only||stars.indexOf(w.c)>=0)&&(!q||w.c.indexOf(q)>=0||(qp&&normPy(w.p).indexOf(qp)>=0)||w.r.toLowerCase().indexOf(q)>=0));
+  $("#dList").innerHTML=list.length?list.map(w=>`<div class="dcard${w.imp?" imp":""}"><div><div class="dc">${esc(w.c)}</div><span class="meta py">${esc(w.p)}</span><span class="meta tr">${esc(w.r)}</span></div><button class="star${stars.indexOf(w.c)>=0?" on":""}" data-c="${esc(w.c)}" title="в избранное">★</button></div>`).join(""):`<div class="tr" style="padding:10px">Ничего не найдено.</div>`;
+  $$("#dList .star").forEach(b=>b.onclick=()=>{const st=S.get("star",[]);const i=st.indexOf(b.dataset.c);i>=0?st.splice(i,1):st.push(b.dataset.c);S.set("star",st);b.classList.toggle("on");if(only)renderDict();});
+}
+function initDict(){
+  $("#dTabs").innerHTML=Object.keys(TABS).map(k=>`<button data-t="${k}" class="${k===dTab?"on":""}">${TABS[k]}</button>`).join("");
+  $$("#dTabs button").forEach(b=>b.onclick=()=>{dTab=b.dataset.t;$$("#dTabs button").forEach(x=>x.classList.toggle("on",x===b));renderDict();});
+  $("#dSearch").oninput=renderDict;
+  $("#dStar").onclick=()=>{$("#dStar").classList.toggle("on");$("#dStar").classList.toggle("primary");renderDict();};
+  $("#dCsv").onclick=()=>download("qiuzhi_slovar.csv","﻿иероглиф,пиньинь,перевод\n"+allWords().map(w=>[w.c,w.p,w.r].map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(",")).join("\n"),"text/csv;charset=utf-8");
+  $("#dAnki").onclick=()=>download("qiuzhi_anki.txt",allWords().map(w=>w.c+"\t"+w.p+"<br>"+w.r).join("\n"));
+  $("#dJson").onclick=()=>download("qiuzhi_slovar.json",JSON.stringify(allWords().map(w=>({c:w.c,p:w.p,r:w.r})),null,1),"application/json");
+  $("#dImp").onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{
+    let arr=[];const txt=String(rd.result).replace(/^﻿/,"");
+    try{if(/^\s*\[/.test(txt))arr=JSON.parse(txt).map(o=>({c:o.c||o.hanzi||"",p:o.p||o.pinyin||"",r:o.r||o.ru||o.translation||""}));
+      else arr=txt.split(/\r?\n/).map(l=>l.split(/\t|;|,/).map(x=>x.replace(/^"|"$/g,"").trim())).filter(a=>a[0]&&/[一-鿿]/.test(a[0])).map(a=>({c:a[0],p:a[1]||"",r:a.slice(2).join(", ")}));
+    }catch(err){$("#dMsg").className="msg bad";$("#dMsg").textContent="Не удалось прочитать файл.";return;}
+    arr=arr.filter(w=>w.c);const cur=S.get("imp",[]);const have={};allWords().forEach(w=>have[w.c]=1);let n=0;
+    arr.forEach(w=>{if(!have[w.c]){cur.push(w);have[w.c]=1;n++;}});S.set("imp",cur);
+    $("#dMsg").className="msg ok";$("#dMsg").textContent="Добавлено слов: "+n;renderDict();};rd.readAsText(f);e.target.value="";};
+  $("#dImpClear").onclick=()=>{S.set("imp",[]);$("#dMsg").className="msg";$("#dMsg").textContent="Добавленные слова удалены.";renderDict();};
+  renderDict();initFc();
+}
+let FC={deck:[],i:0};
+function initFc(){
+  const card=$("#fcCard");
+  card.onclick=()=>{if(FC.deck.length)card.classList.toggle("flip");};
+  $("#fcStart").onclick=()=>{
+    const src=$("#fcSrc").value,stars=S.get("star",[]),known=S.get("known",[]);
+    let d=allWords().filter(w=>src==="all"||(src==="star"?stars.indexOf(w.c)>=0:src==="new"?known.indexOf(w.c)<0:w.t===src));
+    if($("#fcShuf").checked)d=shuffle(d);d=d.slice(0,+$("#fcN").value);
+    if(!d.length){$("#fcInfo").textContent="В этой выборке нет слов.";return;}
+    FC={deck:d,i:0,ok:0};showFc();$("#fcAgain").disabled=$("#fcKnow").disabled=false;};
+  $("#fcKnow").onclick=()=>{const w=FC.deck[FC.i];const k=S.get("known",[]);if(k.indexOf(w.c)<0){k.push(w.c);S.set("known",k);}FC.ok++;FC.i++;showFc();};
+  $("#fcAgain").onclick=()=>{FC.deck.push(FC.deck[FC.i]);FC.i++;showFc();};
+}
+function showFc(){
+  const card=$("#fcCard");card.classList.remove("flip");
+  if(FC.i>=FC.deck.length){$("#fcFront").innerHTML=`<div class="big">完成！</div><div class="hint">Колода пройдена. Знаю: ${FC.ok}</div>`;$("#fcBack").innerHTML="";$("#fcAgain").disabled=$("#fcKnow").disabled=true;$("#fcInfo").textContent="";FC.deck=[];return;}
+  const w=FC.deck[FC.i],dir=$("#fcDir").value,hint=$("#fcHint").checked;
+  const big=w.c.length>6?' style="font-size:30px"':"";
+  const zh=`<div class="big"${big}>${esc(w.c)}</div>`,py=`<div class="mid" style="color:var(--accent)">${esc(w.p)}</div>`,ru=`<div class="mid">${esc(w.r)}</div>`;
+  if(dir==="zh"){$("#fcFront").innerHTML=zh+(hint?py:"");$("#fcBack").innerHTML=zh+py+ru;}
+  else if(dir==="ru"){$("#fcFront").innerHTML=ru+(hint?py:"");$("#fcBack").innerHTML=zh+py+ru;}
+  else{$("#fcFront").innerHTML=py;$("#fcBack").innerHTML=zh+py+ru;}
+  $("#fcInfo").textContent=(FC.i+1)+" / "+FC.deck.length;
+}
+
+/* ========== грамматика ========== */
+const SCALE=`<div class="scale" aria-hidden="true"><svg viewBox="0 0 300 150">
+  <path d="M150 52 V140 M118 140 H182" stroke="#301728" stroke-width="3" stroke-linecap="round"/>
+  <g class="beam"><path d="M50 52 H250" stroke="#301728" stroke-width="3.4" stroke-linecap="round"/><circle cx="150" cy="52" r="6" fill="#8e2f5e"/></g>
+  <g class="panL"><path d="M50 52 L28 96 M50 52 L72 96" stroke="#301728" stroke-width="1.4"/><path d="M14 96 H86 C82 122 18 122 14 96Z" fill="#fffae3" stroke="#301728" stroke-width="1.6"/><text x="50" y="113" text-anchor="middle" font-size="15" font-weight="900" fill="#7a4a8c" font-family="KaiTi,STKaiti,serif">与其 A</text></g>
+  <g class="panR"><path d="M250 52 L228 96 M250 52 L272 96" stroke="#301728" stroke-width="1.4"/><path d="M214 96 H286 C282 122 218 122 214 96Z" fill="#f2d679" stroke="#301728" stroke-width="1.6"/><text x="250" y="113" text-anchor="middle" font-size="15" font-weight="900" fill="#8e2f5e" font-family="KaiTi,STKaiti,serif">不如 B</text></g>
+</svg></div>`;
+const GRAM=[
+ {id:"bzm",seal:"不怎么",t:"不怎么 / 没怎么",py:"bù zěnme / méi zěnme",mean:"«не особенно, не очень» — смягчённое отрицание",
+  fm:["S + <b>不怎么</b> + Adj / V","S + <b>没怎么</b> + V (о прошлом)","V + 得 + <b>不怎么</b> + Adj","<b>不怎么样</b> = «так себе»"],
+  desc:`<p><span class="zh">怎么</span> здесь не вопрос «как?», а усилитель: <span class="zh">不怎么</span> значит «не особенно, не слишком». Это мягкое отрицание, по-русски «не очень», «не особо», «не сказать чтобы». Китайцы постоянно пользуются им, когда скромно говорят о себе (<span class="zh">我说得不怎么好</span>) или вежливо что-то оценивают.</p>
+   <p><b>不</b> и <b>没</b> выбираются так же, как в обычном отрицании. <b>不怎么</b> — свойство, привычка, умение, оценка: <span class="zh">不怎么辣, 不怎么喜欢, 不怎么会</span>. <b>没怎么</b> — действие в прошлом почти не совершалось: <span class="zh">没怎么复习, 没怎么睡</span>.</p>
+   <p style="font-size:13px;color:var(--ink-soft)">Тон: перед 怎 (3-й тон) слово 不 остаётся 4-м — <i>bù zěnme</i>, а в 不太 меняется на 2-й — <i>bú tài</i>.</p>`,
+  mine:[["我刚开始学汉语，说得[不怎么]好。","Wǒ gāng kāishǐ xué Hànyǔ, shuō de bù zěnme hǎo.","Я только начал учить китайский и говорю не очень хорошо."],
+        ["这次考试他考得不太好，因为工作太忙，[没怎么]复习。","Zhè cì kǎoshì tā kǎo de bú tài hǎo, yīnwèi gōngzuò tài máng, méi zěnme fùxí.","Этот экзамен он сдал не очень хорошо: работы было много, и он почти не готовился."],
+        ["这道菜[不怎么]辣，你可以尝尝。","Zhè dào cài bù zěnme là, nǐ kěyǐ chángchang.","Это блюдо не особо острое, попробуйте."]],
+  ex:[["我[不怎么]喜欢打电话，有事发微信吧。","Wǒ bù zěnme xǐhuan dǎ diànhuà, yǒu shì fā Wēixìn ba.","Я не особо люблю звонить: если что, пишите в WeChat."],
+      ["昨天晚上我[没怎么]睡，一直在改简历。","Zuótiān wǎnshang wǒ méi zěnme shuì, yìzhí zài gǎi jiǎnlì.","Вчера ночью я почти не спал: всё переделывал резюме."],
+      ["他的简历写得[不怎么样]，没有什么亮点。","Tā de jiǎnlì xiě de bù zěnmeyàng, méiyǒu shénme liàngdiǎn.","Резюме у него так себе, никакой изюминки."]],
+  extra:`<div class="tblw"><table class="tbl"><tr><th>форма</th><th>сила</th><th>пример</th></tr>
+   <tr><td><span class="zh">不</span> + Adj</td><td>категорично</td><td><span class="zh">这道菜不辣。</span> Блюдо не острое.</td></tr>
+   <tr><td><span class="zh">不太 / 不怎么</span> + Adj</td><td>мягко: «не очень»</td><td><span class="zh">这道菜不怎么辣。</span> Не особо острое.</td></tr>
+   <tr><td><span class="zh">一点也不</span> + Adj</td><td>«совсем не»</td><td><span class="zh">这道菜一点也不辣。</span> Совсем не острое.</td></tr>
+   <tr><td><span class="zh">没怎么</span> + V</td><td>«почти не делал»</td><td><span class="zh">我中午没怎么吃。</span> Я в обед почти не ел.</td></tr></table></div>`,
+  trap:["<s class='zh'>不怎么很好</s> → <span class='zh'>不怎么好</span>: 不怎么 уже смягчает, 很 не нужно.","<s class='zh'>这道菜没怎么辣</s> → <span class='zh'>这道菜不怎么辣</span>: прилагательное отрицается через 不.","<s class='zh'>昨天我不怎么复习</s> → <span class='zh'>昨天我没怎么复习</span>: о конкретном прошлом — 没.","Русское «не очень хорошо» тянет сказать <span class='zh'>不很好</span>. Так можно, но звучит непривычно. Естественнее — <span class='zh'>不太好 / 不怎么好</span>."]},
+
+ {id:"zw",seal:"作为",t:"作为 + роль",py:"zuòwéi",mean:"«в качестве…, будучи…, как…»",
+  fm:["<b>作为</b> + роль，S + …","S + <b>作为</b> + роль + V …","<b>作为</b> + 一(个 / 名) + роль"],
+  desc:`<p><span class="zh">作为</span> + существительное-роль = «будучи…, в качестве…, как…». Конструкция показывает, <b>в какой роли</b> выступает подлежащее, и объясняет его поступок: «как руководитель, я должен…». Обычно <span class="zh">作为</span> стоит в начале фразы перед подлежащим, иногда после него: <span class="zh">他作为代表……</span></p>
+   <p>Главное правило: роль после <span class="zh">作为</span> относится к <b>подлежащему</b> главной части. Если в первой части «руководитель — я», подлежащим второй части должно быть <span class="zh">我</span>.</p>`,
+  mine:[["[作为]公司的主管，我明天要参加他的面试。","Zuòwéi gōngsī de zhǔguǎn, wǒ míngtiān yào cānjiā tā de miànshì.","Как руководитель в компании, я завтра буду на его собеседовании."]],
+  ex:[["[作为]{应届毕业生}，我经验不多，但是学东西很快。","Zuòwéi yīngjiè bìyèshēng, wǒ jīngyàn bù duō, dànshì xué dōngxi hěn kuài.","Как выпускник этого года, я не имею большого опыта, но быстро учусь."],
+      ["[作为]律师，最起码要诚实。","Zuòwéi lǜshī, zuì qǐmǎ yào chéngshí.","Юрист должен быть по меньшей мере честным."],
+      ["他[作为]公司{代表}参加了{招聘会}。","Tā zuòwéi gōngsī dàibiǎo cānjiāle zhāopìnhuì.","Он участвовал в ярмарке вакансий как представитель компании."]],
+  extra:`<div class="tblw"><table class="tbl"><tr><th>по-русски «как / кем»</th><th>по-китайски</th><th>пример</th></tr>
+   <tr><td>«как…, будучи…» (роль — причина поступка)</td><td><span class="zh">作为</span></td><td><span class="zh">作为学生，我应该好好学习。</span></td></tr>
+   <tr><td>«работать / стать кем-то»</td><td><span class="zh">当 / 做</span></td><td><span class="zh">我想当律师。</span> Хочу стать юристом.</td></tr>
+   <tr><td>«как, похоже на»</td><td><span class="zh">像</span></td><td><span class="zh">他说话像律师。</span> Говорит как юрист.</td></tr></table></div>`,
+  trap:["<s class='zh'>作为老师，学生们都很喜欢他。</s> «Учитель» — он, а подлежащее — «ученики». ✓ <span class='zh'>作为老师，他很受学生欢迎。</span>","«Я работаю юристом» — не 作为: ✓ <span class='zh'>我当律师 / 我是律师 / 我在律师事务所工作</span>.","作为 — книжное слово. С другом проще: <span class='zh'>我是学生，所以……</span>"]},
+
+ {id:"yly",seal:"有利于",t:"有利于 / 不利于",py:"yǒulìyú / bùlìyú",mean:"«способствует» / «мешает, вредит»",
+  fm:["A + <b>有利于</b> + N / V","A + <b>不利于</b> + N / V","= A + <b>对</b> + N + 有利 / 不利"],
+  desc:`<p><span class="zh">有利于</span> — «способствует, идёт на пользу», <span class="zh">不利于</span> — «мешает, вредит, неблагоприятно для». <span class="zh">于</span> здесь — книжный предлог «для, к», поэтому конструкция звучит официально: в статьях, сочинениях, на собеседовании.</p>
+   <p>Слева стоит то, что влияет: ситуация, привычка, действие. Справа — то, на что оно влияет: существительное или глагол (<span class="zh">学习, 找工作, 身体健康, 公司的发展</span>). Разговорный аналог — <span class="zh">对……有好处 / 对……不好</span>.</p>`,
+  mine:[["在安静的房间里[有利于]学习。","Zài ānjìng de fángjiān lǐ yǒulìyú xuéxí.","В тихой комнате лучше учиться (тишина способствует учёбе)."]],
+  mineNote:"В конспекте подлежащее опущено: в устной речи так говорят. В письменной лучше назвать, что именно помогает: <span class='zh'>安静的环境有利于学习</span> или <span class='zh'>在安静的房间里学习，有利于{集中}{注意力}</span>.",
+  ex:[["实习经历[有利于]找工作。","Shíxí jīnglì yǒulìyú zhǎo gōngzuò.","Опыт стажировок помогает найти работу."],
+      ["简历写得太长，[不利于]{突出}你的亮点。","Jiǎnlì xiě de tài cháng, bùlìyú tūchū nǐ de liàngdiǎn.","Слишком длинное резюме мешает показать ваши сильные стороны."],
+      ["经常{熬夜}[不利于]身体健康。","Jīngcháng áoyè bùlìyú shēntǐ jiànkāng.","Если часто не спать по ночам, это вредит здоровью."]],
+  trap:["<s class='zh'>有利于对学习</s>, <s class='zh'>对学习有利于</s> → ✓ <span class='zh'>有利于学习 = 对学习有利</span>. Русское «полезно <b>для</b>» уже заключено в 于, второй предлог не нужен.","О людях так не говорят: «он мне помогает» — ✓ <span class='zh'>他帮助我</span>, а не <s class='zh'>他有利于我</s>.","Отрицание — только <span class='zh'>不利于</span>. Формы <s class='zh'>没有利于</s> не бывает."]},
+
+ {id:"yq",seal:"与其…不如",t:"与其 A，不如 B",py:"yǔqí… bùrú…",mean:"«чем A, лучше (уж) B»",
+  fm:["(S) <b>与其</b> + A，(S) <b>不如</b> + B","… <b>还不如 / 倒不如</b> + B — с нажимом"],
+  desc:`<p>Говорящий сравнивает два варианта и <b>отказывается от первого</b> в пользу второго. Обе части — действия, глагольные группы.</p>
+   <p>Порядок противоположен русскому «лучше B, чем A». В китайском <b>сначала</b> идёт то, что отвергаем, <b>потом</b> — то, что выбираем. Посмотрите на весы: чаша <span class="zh">不如</span> всегда перевешивает.</p>`,
+  extraTop:SCALE,
+  mine:[["[与其]在家里（{待着}），[不如]出去走走。","Yǔqí zài jiā lǐ (dāizhe), bùrú chūqù zǒuzou.","Чем сидеть дома, лучше уж пойти прогуляться."]],
+  mineNote:"В конспекте в первой части нет глагола. В разговоре так говорят, но полнее и правильнее с глаголом: <span class='zh'>与其在家里{待着}……</span> Обе части 与其……不如 — действия.",
+  ex:[["[与其]每天担心找不到工作，[不如]现在就开始投简历。","Yǔqí měi tiān dānxīn zhǎo bu dào gōngzuò, bùrú xiànzài jiù kāishǐ tóu jiǎnlì.","Чем каждый день переживать, что не найдёте работу, лучше прямо сейчас начать рассылать резюме."],
+      ["[与其]发一百份一样的简历，[还不如]认真准备十份。","Yǔqí fā yìbǎi fèn yíyàng de jiǎnlì, hái bùrú rènzhēn zhǔnbèi shí fèn.","Чем рассылать сто одинаковых резюме, лучше как следует подготовить десять."],
+      ["我[与其]坐出租车，[不如]坐地铁，又快又便宜。","Wǒ yǔqí zuò chūzūchē, bùrú zuò dìtiě, yòu kuài yòu piányi.","Чем ехать на такси, я лучше поеду на метро: и быстрее, и дешевле."]],
+  extra:`<div class="gnote">Без 与其 слово <span class="zh">不如</span> значит «уступать»: A 不如 B = «A хуже B». <span class="zh">坐出租车不如坐地铁方便。</span> На такси ездить не так удобно, как на метро.</div>`,
+  trap:["Русский порядок: «Лучше пойду погуляю, чем сидеть дома» → ✓ <span class='zh'>与其在家里待着，不如出去走走</span>, а не <s class='zh'>与其出去走走，不如在家里待着</s>: это значит обратное!","<s class='zh'>与其……比……</s>, <s class='zh'>与其……但是……</s> — пара только 与其……不如.","Если подлежащее одно, его называют один раз, обычно перед 与其: <span class='zh'>我与其……，不如……</span>"]},
+
+ {id:"gr",seal:"固然",t:"固然 A，但是 B",py:"gùrán… dànshì / kěshì…",mean:"«конечно, A, но B»",
+  fm:["S + <b>固然</b> + Adj/V，<b>但是 / 可是</b> + B","S + <b>固然</b> + …，S₂ + <b>却</b> + …","A <b>固然</b>好，B <b>也</b>……"],
+  desc:`<p><span class="zh">固然</span> — «конечно, безусловно, спору нет». Говорящий <b>признаёт</b> A правдой, а затем переносит акцент на B, где и заключена главная мысль: <span class="zh">钱固然重要，但是……</span> «да, деньги важны, но…». Вторую часть вводят <span class="zh">但是, 可是, 却</span>.</p>
+   <p>Обычное место <span class="zh">固然</span> — <b>после подлежащего</b>, перед сказуемым, как у наречия. Звучит книжно: в спорах, эссе, на собеседовании.</p>`,
+  mine:[["钱[固然]重要，[但是]买不到真正的快乐。","Qián gùrán zhòngyào, dànshì mǎi bu dào zhēnzhèng de kuàilè.","Деньги, конечно, важны, но настоящего счастья на них не купишь."]],
+  ex:[["工资[固然]重要，[可是]我更{看重}发展机会。","Gōngzī gùrán zhòngyào, kěshì wǒ gèng kànzhòng fāzhǎn jīhuì.","Зарплата, безусловно, важна, но для меня важнее возможность расти."],
+      ["这份实习[固然]很累，[但是]对我的专业很有帮助。","Zhè fèn shíxí gùrán hěn lèi, dànshì duì wǒ de zhuānyè hěn yǒu bāngzhù.","Эта стажировка, конечно, выматывает, но очень полезна для моей специальности."],
+      ["你的想法[固然]不错，[但是]有点幼稚。","Nǐ de xiǎngfǎ gùrán búcuò, dànshì yǒudiǎn yòuzhì.","Ваша идея, конечно, неплохая, но немного наивная."],
+      ["能被大公司录用[固然]好，去小公司[也]能学到很多。","Néng bèi dà gōngsī lùyòng gùrán hǎo, qù xiǎo gōngsī yě néng xuédào hěn duō.","Попасть в крупную компанию, конечно, хорошо, но и в маленькой можно многому научиться."]],
+  extra:`<div class="tblw"><table class="tbl"><tr><th></th><th><span class="zh">虽然</span></th><th><span class="zh">固然</span></th></tr>
+   <tr><td><b>смысл</b></td><td>«хотя A» — уступка; A может быть и неважным</td><td>«да, A правда, признаю» — A весомо, но B важнее или тоже возможно</td></tr>
+   <tr><td><b>место</b></td><td>перед подлежащим или после него</td><td>после подлежащего</td></tr>
+   <tr><td><b>стиль</b></td><td>нейтральный, везде</td><td>книжный, в рассуждениях</td></tr>
+   <tr><td><b>пара</b></td><td><span class="zh">但是 / 可是 / 却</span></td><td><span class="zh">但是 / 可是 / 却</span> или <span class="zh">也</span> «тоже»</td></tr></table></div>`,
+  trap:["<s class='zh'>虽然钱固然重要</s> — двойная уступка: оставьте или 虽然, или 固然.","<s class='zh'>钱固然重要，所以……</s>: 固然 обещает поворот «но», а не вывод.","Повтор вместо поворота: <s class='zh'>钱固然重要，但是钱很重要</s> — во второй части должна быть другая мысль."]},
+
+ {id:"sf",seal:"是否·能否",t:"是否 / 能否",py:"shìfǒu / néngfǒu",mean:"книжные «是不是 / 有没有» и «能不能»",
+  fm:["S + <b>是否</b> + V/Adj …？","S + <b>能否</b> + V …？","不知道 / 问 / 请告诉我 + S + <b>是否</b> …"],
+  desc:`<p><span class="zh">否</span> <span class="py">fǒu</span> — книжное «нет». Поэтому <span class="zh">是否</span> = <span class="zh">是不是 / 有没有</span>, а <span class="zh">能否</span> = <span class="zh">能不能 / 可不可以</span>. Смысл тот же, но стиль официальный: деловые письма, объявления, анкеты, вежливые просьбы к незнакомым людям.</p>
+   <p>Особенно полезно в косвенном вопросе. Русское <b>«ли»</b> — «не знаю, возьмут <b>ли</b> меня» — по-китайски часто передают через <span class="zh">是否</span>: <span class="zh">我不知道是否会被录用</span>.</p>`,
+  mine:[["请问，我[能否]在这里拍照？","Qǐngwèn, wǒ néngfǒu zài zhèlǐ pāizhào?","Скажите, пожалуйста, можно ли мне здесь фотографировать?"]],
+  ex:[["请问{贵公司}[是否]还在招聘？","Qǐngwèn guì gōngsī shìfǒu hái zài zhāopìn?","Скажите, пожалуйста, ваша компания ещё набирает сотрудников?"],
+      ["{面试官}问我[是否]有相关经验。","Miànshìguān wèn wǒ shìfǒu yǒu xiāngguān jīngyàn.","Интервьюер спросил, есть ли у меня подходящий опыт."],
+      ["我还不知道自己[是否]被录用了。","Wǒ hái bù zhīdào zìjǐ shìfǒu bèi lùyòng le.","Я пока не знаю, взяли ли меня."],
+      ["您[能否]给我写一封推荐信？","Nín néngfǒu gěi wǒ xiě yì fēng tuījiànxìn?","Не могли бы вы написать мне рекомендательное письмо?"]],
+  extra:`<div class="tblw"><table class="tbl"><tr><th>с другом</th><th>в письме, на собеседовании, в анкете</th></tr>
+   <tr><td><span class="zh">你明天有没有空？</span></td><td><span class="zh">您明天是否方便？</span></td></tr>
+   <tr><td><span class="zh">你有没有经验？</span></td><td><span class="zh">您是否有相关经验？</span></td></tr>
+   <tr><td><span class="zh">能不能帮我一下？</span></td><td><span class="zh">您能否帮我一下？</span></td></tr></table></div>`,
+  trap:["<s class='zh'>你是否同意吗？</s> — 否 уже делает фразу вопросом, 吗 лишний.","<s class='zh'>能否不能</s>, <s class='zh'>是否不是</s> — повтор.","Место — перед сказуемым, а не в конце: <s class='zh'>你去是否？</s> → ✓ <span class='zh'>你是否去？</span> / <span class='zh'>你去不去？</span>","С другом 是否 звучит как канцелярит: <span class='zh'>你是否饿了？</span> — примерно как «не изволите ли вы проголодаться?»"]}
+];
+function gexHTML(e,mine){return `<div class="gex${mine?" mine":""}">${mk(e[0])}<span class="py">${e[1]}</span><span class="tr">${e[2]}</span></div>`;}
+function initGram(){
+  $("#gNav").innerHTML=GRAM.map((g,i)=>`<a href="#g-${g.id}">${g.seal}<small>${i+1} · ${g.py.split(" / ")[0].split("…")[0]}</small></a>`).join("");
+  $("#gWrap").innerHTML=GRAM.map((g,i)=>`<div class="gcard reveal" id="g-${g.id}">
+    <div class="gh"><div class="seal">${g.seal.replace("·","<br>")}</div><div class="gt">${g.t}<span class="py">${g.py}</span><span class="mean">${g.mean}</span></div><span class="gnum">конструкция ${i+1}</span></div>
+    <div class="fm">${g.fm.map(f=>`<span>${f}</span>`).join("")}</div>
+    <div class="gdesc">${g.desc}</div>
+    ${g.extraTop||""}
+    <div class="gcols"><div><div class="bank-head">Из конспекта</div>${g.mine.map(e=>gexHTML(e,1)).join("")}${g.mineNote?`<div class="gnote">${mk(g.mineNote)}</div>`:""}</div>
+      <div><div class="bank-head">Ещё примеры</div>${g.ex.map(e=>gexHTML(e)).join("")}</div></div>
+    ${g.extra||""}
+    <div class="gtrap"><b class="h">Ловушки</b><ul>${g.trap.map(t=>`<li>${t}</li>`).join("")}</ul></div>
+    <div class="row-btns" style="justify-content:flex-end"><a class="btn small primary" href="#gp-${g.id}">练 · упражнения на эту конструкцию →</a></div>
+  </div>`).join("");
+}
+
+/* ========== общий движок «выбор варианта» с повторной попыткой ========== */
+function initMC(id,items,opt){
+  opt=opt||{};const key=K[id]||[];
+  const st=S.get(id,{});
+  const wrap=$("#"+id+"Wrap");
+  wrap.innerHTML=items.map((q,i)=>{const ops=S.get(id+"op"+i,null)||shuffle(q.o);S.set(id+"op"+i,ops);
+    return `<div class="qitem" data-i="${i}">${q.sit?`<div class="sit"><span class="n">${i+1}</span>${q.sit}</div>`:""}
+      ${q.s!=null?`<div class="s">${q.sit?"":`<span class="n">${i+1}</span>`}${mk(q.s).replace("___",'<span class="gap">　</span>')}</div>`:""}
+      ${q.py?`<span class="py">${q.py}</span>`:""}${q.tr?`<span class="tr">${q.tr}</span>`:""}
+      <div class="opts${opt.long?" long":""}">${ops.map(o=>`<button>${esc(o)}</button>`).join("")}</div>
+      <div class="why"></div><div class="kbox"></div></div>`;}).join("");
+  $$(".qitem",wrap).forEach(el=>{const i=+el.dataset.i,k=key[i]||["",""];
+    const s=st[i]||{w:[]};
+    const done=()=>{el.classList.add("ok","done");const g=$(".gap",el);if(g)g.textContent=k[0];$(".why",el).innerHTML=mk(k[1]||"");
+      $$("button",el).forEach(b=>{b.disabled=true;if(b.textContent===k[0])b.classList.add("right");});};
+    s.w.forEach(w=>$$("button",el).forEach(b=>{if(b.textContent===w){b.classList.add("wrong");b.disabled=true;}}));
+    if(s.d)done();
+    $$("button",el).forEach(b=>b.onclick=()=>{const cur=st[i]||{w:[]};if(cur.d)return;
+      if(b.textContent===k[0]){cur.d=1;st[i]=cur;S.set(id,st);done();}
+      else{cur.w.push(b.textContent);st[i]=cur;S.set(id,st);b.classList.add("wrong");b.disabled=true;el.classList.add("shake");setTimeout(()=>el.classList.remove("shake"),400);}
+      mcScore(id,items.length);});
+  });
+  $("#"+id+"Reset").onclick=()=>{S.set(id,{});items.forEach((q,i)=>S.set(id+"op"+i,null));initMC(id,items,opt);};
+  mcScore(id,items.length);
+}
+function mcScore(id,n){const st=S.get(id,{});const d=Object.keys(st).filter(i=>st[i].d).length,e=Object.keys(st).reduce((a,i)=>a+(st[i].w||[]).length,0);
+  $("#"+id+"Count").textContent=`Решено: ${d} / ${n}`;$("#"+id+"Err").textContent=e?`промахов: ${e}`:"";bar("#"+id+"Bar",d,n);prog(id,d,n);}
+
+/* ========== E1: какая конструкция ========== */
+const E1=[
+ {s:"___一名律师，你最起码要诚实。",py:"___ yì míng lǜshī, nǐ zuì qǐmǎ yào chéngshí.",tr:"Будучи юристом, вы как минимум должны быть честным.",o:["与其","作为","固然"]},
+ {s:"我昨天晚上___睡，一直在改简历。",py:"Wǒ zuótiān wǎnshang ___ shuì, yìzhí zài gǎi jiǎnlì.",tr:"Вчера ночью я почти не спал: всё переделывал резюме.",o:["不怎么","不利于","没怎么"]},
+ {s:"这家公司的工资___高，但是能学到很多东西。",py:"Zhè jiā gōngsī de gōngzī ___ gāo, dànshì néng xuédào hěn duō dōngxi.",tr:"Зарплата в этой компании не особо высокая, зато можно многому научиться.",o:["没怎么","是否","不怎么"]},
+ {s:"每天只睡五个小时___身体健康。",py:"Měi tiān zhǐ shuì wǔ ge xiǎoshí ___ shēntǐ jiànkāng.",tr:"Спать всего пять часов в сутки вредно для здоровья.",o:["有利于","作为","不利于"]},
+ {s:"去大公司实习___{积累}工作经验。",py:"Qù dà gōngsī shíxí ___ jīlěi gōngzuò jīngyàn.",tr:"Стажировка в крупной компании помогает набраться опыта.",o:["不利于","与其","有利于"]},
+ {s:"___在家里等电话，不如再多投几份简历。",py:"___ zài jiā lǐ děng diànhuà, bùrú zài duō tóu jǐ fèn jiǎnlì.",tr:"Чем сидеть дома и ждать звонка, лучше разослать ещё несколько резюме.",o:["固然","与其","作为"]},
+ {s:"与其做一份不喜欢的工作，___先去读{研究生}。",py:"Yǔqí zuò yí fèn bù xǐhuan de gōngzuò, ___ xiān qù dú yánjiūshēng.",tr:"Чем работать на нелюбимой работе, лучше сначала пойти в магистратуру.",o:["但是","所以","不如"]},
+ {s:"工资___重要，可是我更{看重}这份工作的发展机会。",py:"Gōngzī ___ zhòngyào, kěshì wǒ gèng kànzhòng zhè fèn gōngzuò de fāzhǎn jīhuì.",tr:"Зарплата, конечно, важна, но для меня важнее возможность роста на этой работе.",o:["不怎么","固然","与其"]},
+ {s:"请问，{贵公司}___还在招聘销售经理？",py:"Qǐngwèn, guì gōngsī ___ hái zài zhāopìn xiāoshòu jīnglǐ?",tr:"Скажите, пожалуйста, ваша компания ещё ищет менеджера по продажам?",o:["是否","能否","不如"]},
+ {s:"请问，我___下周一再来面试？",py:"Qǐngwèn, wǒ ___ xià zhōuyī zài lái miànshì?",tr:"Скажите, пожалуйста, можно мне прийти на собеседование в следующий понедельник?",o:["有利于","是否","能否"]},
+ {s:"他的简历写得___样，没有什么亮点。",py:"Tā de jiǎnlì xiě de ___yàng, méiyǒu shénme liàngdiǎn.",tr:"Резюме у него так себе, никакой изюминки.",o:["固然","不怎么","没怎么"]},
+ {s:"{面试官}问我___有相关的工作经验。",py:"Miànshìguān wèn wǒ ___ yǒu xiāngguān de gōngzuò jīngyàn.",tr:"Интервьюер спросил, есть ли у меня подходящий опыт работы.",o:["能否","作为","是否"]},
+ {s:"简历固然要写得规范，___也要有自己的亮点。",py:"Jiǎnlì gùrán yào xiě de guīfàn, ___ yě yào yǒu zìjǐ de liàngdiǎn.",tr:"Резюме, конечно, должно быть написано по форме, но в нём должна быть и своя изюминка.",o:["所以","不如","但是"]},
+ {s:"___公司的主管，他每天要面试很多人。",py:"___ gōngsī de zhǔguǎn, tā měi tiān yào miànshì hěn duō rén.",tr:"Как руководитель в компании, он каждый день проводит много собеседований.",o:["是否","作为","与其"]},
+ {s:"在太吵的地方学习___{集中}{注意力}。",py:"Zài tài chǎo de dìfang xuéxí ___ jízhōng zhùyìlì.",tr:"Если заниматься в шумном месте, трудно сосредоточиться.",o:["不如","不利于","有利于"]},
+ {s:"我___会做饭，所以每天都点外卖。",py:"Wǒ ___ huì zuò fàn, suǒyǐ měi tiān dōu diǎn wàimài.",tr:"Я не особо умею готовить, поэтому каждый день заказываю доставку.",o:["作为","没怎么","不怎么"]}
+];
+/* ========== E2: стиль ========== */
+const E2=[
+ {sit:"Вы пишете письмо в отдел кадров: хотите узнать, открыта ли ещё вакансия.",o:["你们还招人吗？","请问贵公司是否还在招聘吗？","请问贵公司是否还在招聘？"]},
+ {sit:"Вы пишете e-mail преподавателю и просите рекомендательное письмо.",o:["老师，您能否给我写一封推荐信吗？","老师，您能不能否给我写推荐信？","老师，您能否给我写一封推荐信？"]},
+ {sit:"Сообщение другу в WeChat: пойдёт ли он завтра на ярмарку вакансий?",o:["你明天去不去招聘会？","你明天去招聘会是否？","你明天是否去招聘会吗？"]},
+ {sit:"Вы составляете анкету для кандидатов. Нужна графа «Есть ли опыт работы».",o:["有没有工作经验吗：","是否有工作经验：","是不是有工作经验吗："]},
+ {sit:"В конце собеседования вы вежливо спрашиваете, когда узнаете, взяли ли вас.",o:["请问，我什么时候能知道是否被录用吗？","请问，我什么时候能知道被录用是否？","请问，我什么时候能知道是否被录用？"]},
+ {sit:"В музее вы вежливо спрашиваете сотрудника, можно ли здесь фотографировать.",o:["请问，这里能否拍照？","请问，这里否能拍照？","请问，这里能否拍照不能？"]}
+];
+/* ========== E3: логика ========== */
+const E3=[
+ {s:"与其每天{抱怨}工作不好，……",py:"Yǔqí měi tiān bàoyuàn gōngzuò bù hǎo, …",tr:"Чем каждый день жаловаться, что работа плохая, …",o:["所以我很喜欢这份工作。","不如每天都抱怨。","不如认真想想自己的出路。"]},
+ {s:"钱固然重要，……",py:"Qián gùrán zhòngyào, …",tr:"Деньги, конечно, важны, …",o:["但是健康更重要。","所以我只想要高工资。","但是钱很重要。"]},
+ {s:"作为{应届毕业生}，……",py:"Zuòwéi yīngjiè bìyèshēng, …",tr:"Как выпускник этого года, …",o:["面试官问了我很多问题。","我们公司很喜欢招聘他。","我经验固然不多，但是学东西很快。"]},
+ {s:"我刚开始学开车，……",py:"Wǒ gāng kāishǐ xué kāichē, …",tr:"Я только начал учиться водить, …",o:["开得不怎么好。","开得没怎么好。","不怎么开得好。"]},
+ {s:"简历写得太长，……",py:"Jiǎnlì xiě de tài cháng, …",tr:"Резюме написано слишком длинно, …",o:["有利于找到工作。","不利于突出自己的亮点。","固然很规范。"]},
+ {s:"他明明有相关经验，……",py:"Tā míngmíng yǒu xiāngguān jīngyàn, …",tr:"У него ведь явно есть подходящий опыт, …",o:["所以被录用了，大家都很高兴。","与其被录用。","却没被录用，这对他打击很大。"]},
+ {s:"与其发一百份一样的简历，……",py:"Yǔqí fā yìbǎi fèn yíyàng de jiǎnlì, …",tr:"Чем рассылать сто одинаковых резюме, …",o:["还不如认真准备十份。","不如发两百份。","但是我发了一百份。"]},
+ {s:"这份实习固然没有工资，……",py:"Zhè fèn shíxí gùrán méiyǒu gōngzī, …",tr:"У этой стажировки, конечно, нет зарплаты, …",o:["所以我不去。","可是能得到很多{宝贵}的经验。","不如不要工资。"]}
+];
+E3.forEach(q=>q.o=q.o.map(o=>o.replace(/[{}]/g,"")));
+
+/* ========== E4: перестройте ========== */
+const E4=[
+ ["他不太会说汉语。","Tā bú tài huì shuō Hànyǔ.","不怎么"],
+ ["上个星期我很少复习，所以考得不太好。","Shàng ge xīngqī wǒ hěn shǎo fùxí, suǒyǐ kǎo de bú tài hǎo.","没怎么"],
+ ["我是公司的主管，我要对{员工}{负责}。","Wǒ shì gōngsī de zhǔguǎn, wǒ yào duì yuángōng fùzé.","作为"],
+ ["多读中文书对提高阅读水平有好处。","Duō dú Zhōngwén shū duì tígāo yuèdú shuǐpíng yǒu hǎochu.","有利于"],
+ ["每天{熬夜}对身体不好。","Měi tiān áoyè duì shēntǐ bù hǎo.","不利于"],
+ ["在家里等消息不好，出去找工作更好。","Zài jiā lǐ děng xiāoxi bù hǎo, chūqù zhǎo gōngzuò gèng hǎo.","与其……不如……"],
+ ["虽然工资很重要，但是经验更重要。","Suīrán gōngzī hěn zhòngyào, dànshì jīngyàn gèng zhòngyào.","固然……但是……"],
+ ["您能不能明天来面试？（в официальном письме）","Nín néng bu néng míngtiān lái miànshì?","能否"],
+ ["我不知道他是不是同意签合同。","Wǒ bù zhīdào tā shì bu shì tóngyì qiān hétong.","是否"],
+ ["我不常看电视，我更喜欢上网。","Wǒ bù cháng kàn diànshì, wǒ gèng xǐhuan shàngwǎng.","不怎么"]
+];
+function initInputs(id,items,render,opt){
+  const key=K[id]||[];const st=S.get(id,{});
+  $("#"+id+"Wrap").innerHTML=items.map((q,i)=>`<div class="qitem trw" data-i="${i}">${render(q,i)}<input class="inp" placeholder="иероглифами…" value="${esc(st[i]||"")}"><div class="fb"></div><div class="kbox"></div></div>`).join("");
+  $$("#"+id+"Wrap input").forEach((inp,i)=>inp.oninput=()=>{st[i]=inp.value;S.set(id,st);});
+  const chk=silent=>{let ok=0,n=0;const res=S.get(id+"r",{});
+    $$("#"+id+"Wrap .qitem").forEach(el=>{const i=+el.dataset.i,v=normZh($("input",el).value),k=key[i]||[[],"",""],fb=$(".fb",el);el.classList.remove("ok","bad");fb.className="fb";fb.textContent="";
+      if(!v){delete res[i];return;}n++;const good=k[0].some(r=>new RegExp(r).test(v));res[i]=good?1:0;if(good)ok++;el.classList.add(good?"ok":"bad");
+      fb.classList.add(good?"ok":"bad");
+      fb.textContent=good?"✓ Верно!":(k[1]&&!new RegExp(k[1]).test(v)?"✗ Нет нужной конструкции. Посмотрите на рамку или подсказку.":"✗ Конструкция есть, но что-то не так: порядок слов, лишнее или пропущенное слово. Попробуйте ещё раз.");});
+    S.set(id+"r",res);if(!silent){$("#"+id+"Res").className="msg "+(ok===items.length?"ok":"bad");$("#"+id+"Res").textContent=`Верно: ${ok} из ${items.length}`+(n<items.length?` · без ответа: ${items.length-n}`:"");}
+    prog(id,ok,items.length);};
+  $("#"+id+"Check").onclick=()=>chk(false);
+  $("#"+id+"Clr").onclick=()=>{S.set(id,{});S.set(id+"r",{});$("#"+id+"Res").textContent="";initInputs(id,items,render,opt);};
+  if(Object.keys(S.get(id+"r",{})).length)chk(true);else prog(id,0,items.length);
+}
+
+/* ========== E5: соберите предложение ========== */
+const E5=[
+ ["Как юрист, он как минимум должен быть честным.",["要","他","作为","诚实","最起码","一名律师"]],
+ ["Чем сидеть дома, лучше пойти прогуляться.",["出去","在家里","不如","走走","待着","与其"]],
+ ["Стажировка, конечно, утомительна, но благодаря ей я получил много опыта.",["可是","很累","得到了","实习","很多经验","让我","固然"]],
+ ["Скажите, пожалуйста, не могли бы вы написать мне рекомендательное письмо?",["写","能否","推荐信","请问","给我","您","一封"]],
+ ["Я ещё не знаю, взяли ли его на работу.",["是否","不知道","他","我","被录用","还"]],
+ ["Такое резюме мешает показать ваши преимущества.",["突出","你的","简历","不利于","优势","这样的"]],
+ ["К вчерашнему собеседованию я почти не готовился, поэтому очень волновался.",["所以","准备","没怎么","很紧张","昨天的面试","我"]],
+ ["Его резюме не соответствует реальному опыту.",["相符","简历","不","和","他的","实际经历"]]
+];
+function initE5(){
+  const key=K.e5||[];const st=S.get("e5",{});
+  $("#e5Wrap").innerHTML=E5.map((q,i)=>`<div class="qitem" data-i="${i}"><div class="sit"><span class="n">${i+1}</span>${q[0]}</div><div class="chips ans"></div><div class="chips pool"></div><div class="fb"></div><div class="kbox"></div></div>`).join("");
+  $$("#e5Wrap .qitem").forEach(el=>{const i=+el.dataset.i,q=E5[i];
+    const draw=()=>{const seq=st[i]||[];
+      $(".ans",el).innerHTML=seq.map(j=>`<button data-j="${j}">${q[1][j]}</button>`).join("");
+      $(".pool",el).innerHTML=q[1].map((c,j)=>seq.indexOf(j)<0?`<button data-j="${j}">${c}</button>`:"").join("");
+      $$(".pool button",el).forEach(b=>b.onclick=()=>{const s=st[i]||[];s.push(+b.dataset.j);st[i]=s;S.set("e5",st);el.classList.remove("ok","bad");$(".fb",el).textContent="";draw();});
+      $$(".ans button",el).forEach(b=>b.onclick=()=>{const s=st[i]||[];s.splice(s.indexOf(+b.dataset.j),1);st[i]=s;S.set("e5",st);el.classList.remove("ok","bad");$(".fb",el).textContent="";draw();});};
+    draw();});
+  const chk=silent=>{let ok=0;S.set("e5c",1);
+    $$("#e5Wrap .qitem").forEach(el=>{const i=+el.dataset.i,seq=st[i]||[],fb=$(".fb",el);el.classList.remove("ok","bad");fb.className="fb";fb.textContent="";
+      if(!seq.length)return;if(seq.length<E5[i][1].length){el.classList.add("bad");fb.className="fb bad";fb.textContent="✗ Использованы не все блоки.";return;}
+      const v=seq.map(j=>E5[i][1][j]).join("");const good=(key[i]||[]).indexOf(v)>=0;if(good)ok++;el.classList.add(good?"ok":"bad");fb.className="fb "+(good?"ok":"bad");fb.textContent=good?"✓ Верно!":"✗ Порядок неверный. Вспомните формулу конструкции.";});
+    if(!silent){$("#e5Res").className="msg "+(ok===E5.length?"ok":"bad");$("#e5Res").textContent=`Верно: ${ok} из ${E5.length}`;}prog("e5",ok,E5.length);};
+  $("#e5Check").onclick=()=>chk(false);
+  $("#e5Clr").onclick=()=>{S.set("e5",{});S.set("e5c",0);$("#e5Res").textContent="";initE5();};
+  if(S.get("e5c",0))chk(true);else prog("e5",0,E5.length);
+}
+
+/* ========== E6: найдите ошибку ========== */
+const E6=[
+ [["你","是否","同意","签","合同","吗","？"],"Nǐ shìfǒu tóngyì qiān hétong ma?","Вы согласны подписать договор?"],
+ [["他","不怎么","很","喜欢","打工","。"],"Tā bù zěnme hěn xǐhuan dǎgōng.","Он не особо любит подрабатывать."],
+ [["这道","菜","没怎么","辣","。"],"Zhè dào cài méi zěnme là.","Это блюдо не особо острое."],
+ [["作为","老师","，","学生们","都","很","喜欢","他","。"],"Zuòwéi lǎoshī, xuéshengmen dōu hěn xǐhuan tā.","Хотели сказать: «Как учитель, он очень любим учениками»."],
+ [["钱","固然","重要","，","所以","健康","更","重要","。"],"Qián gùrán zhòngyào, suǒyǐ jiànkāng gèng zhòngyào.","Деньги, конечно, важны, но здоровье важнее."],
+ [["与其","在","家里","待着","，","比","出去","走走","。"],"Yǔqí zài jiā lǐ dāizhe, bǐ chūqù zǒuzou.","Чем сидеть дома, лучше пойти прогуляться."],
+ [["实习","有利于","对","找","工作","。"],"Shíxí yǒulìyú duì zhǎo gōngzuò.","Стажировка помогает найти работу."],
+ [["请问","，","我","能否","不能","在","这里","拍照","？"],"Qǐngwèn, wǒ néngfǒu bù néng zài zhèlǐ pāizhào?","Скажите, пожалуйста, можно ли мне здесь фотографировать?"],
+ [["我","昨天","不怎么","复习","，","今天","考得","不太","好","。"],"Wǒ zuótiān bù zěnme fùxí, jīntiān kǎo de bú tài hǎo.","Вчера я почти не повторял и сегодня написал не очень хорошо."],
+ [["虽然","钱","固然","重要","，","但是","买","不到","快乐","。"],"Suīrán qián gùrán zhòngyào, dànshì mǎi bu dào kuàilè.","Деньги, конечно, важны, но счастья на них не купишь."]
+];
+function initE6(){
+  const key=K.e6||[];const st=S.get("e6",{});
+  $("#e6Wrap").innerHTML=E6.map((q,i)=>`<div class="qitem" data-i="${i}"><div class="tok"><span class="n">${i+1}</span>${q[0].map((t,j)=>/^[，。！？：]+$/.test(t)?`<span class="pt">${t}</span>`:`<button data-j="${j}">${t}</button>`).join("")}</div><span class="py">${q[1]}</span><span class="tr">${q[2]}</span><div class="fix"></div><div class="kbox"></div></div>`).join("");
+  $$("#e6Wrap .qitem").forEach(el=>{const i=+el.dataset.i,k=key[i]||[[],"",""];
+    const solve=j=>{el.classList.add("ok","done");const b=$(`button[data-j="${j}"]`,el);if(b)b.classList.add("hit");$(".fix",el).innerHTML=`✓ <span class="zh">${k[1]}</span><br>${k[2]}`;};
+    if(st[i]!=null)solve(st[i]);
+    $$("button",el).forEach(b=>b.onclick=()=>{if(st[i]!=null)return;const j=+b.dataset.j;
+      if(k[0].indexOf(j)>=0){st[i]=j;S.set("e6",st);solve(j);e6Score();}
+      else{b.classList.add("miss");el.classList.add("shake");setTimeout(()=>{el.classList.remove("shake");b.classList.remove("miss");},600);S.set("e6e",S.get("e6e",0)+1);e6Score();}});
+  });
+  $("#e6Reset").onclick=()=>{S.set("e6",{});S.set("e6e",0);initE6();};
+  e6Score();
+}
+function e6Score(){const st=S.get("e6",{}),n=Object.keys(st).length;$("#e6Count").textContent=`Найдено: ${n} / ${E6.length}`;$("#e6Err").textContent=S.get("e6e",0)?`промахов: ${S.get("e6e",0)}`:"";bar("#e6Bar",n,E6.length);prog("e6",n,E6.length);}
+
+/* ========== E7: переводы ========== */
+const E7=[
+ ["Я не особо люблю звонить по телефону.","不怎么 · 打电话"],
+ ["Вчера я почти не готовился к собеседованию.","没怎么 · 准备 · 面试"],
+ ["Как руководитель, я должен подписать этот договор.","作为 · 主管 · 签 · 份"],
+ ["Стажировка помогает найти работу.","实习 · 有利于"],
+ ["Чем ждать звонка, лучше позвонить самому.","与其……不如…… · 等 · 自己 · 打电话"],
+ ["Опыт, конечно, важен, но честность важнее.","固然 · 诚实"],
+ ["Скажите, пожалуйста, ваша компания ещё набирает сотрудников? (официальное письмо)","贵公司 · 是否 · 招聘"],
+ ["Не могли бы вы меня порекомендовать? (официально)","能否 · 推荐"]
+];
+const E7B=[
+ ["他明明很有经验，却没被录用，这对他打击很大。","Tā míngmíng hěn yǒu jīngyàn, què méi bèi lùyòng, zhè duì tā dǎjī hěn dà."],
+ ["与其{抱怨}，不如想想自己的出路。","Yǔqí bàoyuàn, bùrú xiǎngxiang zìjǐ de chūlù."],
+ ["作为{应届毕业生}，我唯一的优势是学东西很快。","Zuòwéi yīngjiè bìyèshēng, wǒ wéiyī de yōushì shì xué dōngxi hěn kuài."],
+ ["我们公司即将招聘几位销售经理，你是否有兴趣？","Wǒmen gōngsī jíjiāng zhāopìn jǐ wèi xiāoshòu jīnglǐ, nǐ shìfǒu yǒu xìngqù?"],
+ ["简历要写得规范，内容要和实际经历相符，最起码要诚实。","Jiǎnlì yào xiě de guīfàn, nèiróng yào hé shíjì jīnglì xiāngfú, zuì qǐmǎ yào chéngshí."]
+];
+function initE7b(){
+  const st=S.get("e7b",{});
+  $("#e7bWrap").innerHTML=E7B.map((q,i)=>`<div class="qitem trw" data-i="${i}"><div class="src"><span class="n">${i+1}</span>${mk(q[0])}</div><span class="py">${q[1]}</span><textarea class="inp ru-in" placeholder="ваш перевод на русский…">${esc(st[i]||"")}</textarea><div class="kbox"></div></div>`).join("");
+  $$("#e7bWrap textarea").forEach((t,i)=>t.oninput=()=>{st[i]=t.value;S.set("e7b",st);});
+}
+
+/* ========== общий поповер ========== */
+const POP=$("#pop");let popCb=null;
+function openPop(anchor,title,opts,cb,used){
+  POP.innerHTML=`<span class="ph">${title}</span>`+opts.map(o=>`<button${used&&used.indexOf(o)>=0?' style="opacity:.45"':""}>${o}</button>`).join("")+`<button data-x="1" style="font-family:var(--sans);font-size:12px">✕</button>`;
+  POP.classList.add("on");const b=anchor.getBoundingClientRect();
+  POP.style.left=Math.max(8,Math.min(b.left+scrollX,scrollX+innerWidth-POP.offsetWidth-10))+"px";POP.style.top=(b.bottom+scrollY+6)+"px";
+  popCb=cb;$$("button",POP).forEach(x=>x.onclick=e=>{e.stopPropagation();POP.classList.remove("on");if(!x.dataset.x)popCb(x.textContent);});
+}
+document.addEventListener("click",e=>{if(!e.target.closest("#pop")&&!e.target.closest(".slot")&&!e.target.closest(".gp"))POP.classList.remove("on");});
+
+/* ========== V1: соберите слово ========== */
+const V1A=["招","实","出","经","面","简","推","诚","录","相","打","优","工"];
+const V1B=["资","销","聘","用","历","习","符","试","路","势","验","荐","实","工"];
+const V1=[
+ "Документ о себе, который отправляют работодателю",
+ "Встреча кандидата с работодателем перед приёмом на работу",
+ "Компания ищет новых сотрудников, объявляет набор",
+ "Компания решила взять кандидата на работу",
+ "Знания и навыки, накопленные за годы работы",
+ "То, через что человек прошёл; этапы биографии в резюме",
+ "Работа студента в компании ради практики",
+ "Сильная сторона, которой нет у конкурентов",
+ "Не обманывает, говорит правду",
+ "Совпадает, соответствует (о данных и реальности)",
+ "Выход из трудного положения, перспектива",
+ "Подрабатывать (например, студенту в кафе)",
+ "Деньги, которые каждый месяц получают за работу",
+ "Посоветовать кого-либо или что-либо",
+ "Продвигать товар, уговаривать купить"
+];
+function initV1(){
+  const st=S.get("v1",{});
+  $("#v1Wrap").innerHTML=V1.map((q,i)=>{const s=st[i]||{};return `<div class="qitem" data-i="${i}"><div class="bld"><div class="sit"><span class="n">${i+1}</span>${q}</div><div class="slots"><button class="slot${s.a?" set":""}" data-k="a">${s.a||"1-й"}</button><span class="plus">+</span><button class="slot${s.b?" set":""}" data-k="b">${s.b||"2-й"}</button></div></div><div class="fb"></div><div class="kbox"></div></div>`;}).join("");
+  $$("#v1Wrap .qitem").forEach(el=>{const i=+el.dataset.i;
+    $$(".slot",el).forEach(sl=>sl.onclick=e=>{e.stopPropagation();const k=sl.dataset.k;
+      openPop(sl,k==="a"?"первый иероглиф":"второй иероглиф",k==="a"?V1A:V1B,val=>{st[i]=Object.assign({},st[i],{[k]:val});S.set("v1",st);sl.textContent=val;sl.classList.add("set");el.classList.remove("ok","bad");$(".fb",el).textContent="";});});});
+  $("#v1Check").onclick=()=>v1Check(false);
+  $("#v1Clr").onclick=()=>{S.set("v1",{});S.set("v1c",0);$("#v1Res").textContent="";initV1();prog("v1",0,V1.length);};
+  if(S.get("v1c",0))v1Check(true);else prog("v1",0,V1.length);
+}
+function v1Check(silent){
+  const st=S.get("v1",{}),key=K.v1||[];let ok=0;S.set("v1c",1);
+  $$("#v1Wrap .qitem").forEach(el=>{const i=+el.dataset.i,s=st[i]||{},fb=$(".fb",el);el.classList.remove("ok","bad");fb.className="fb";fb.textContent="";
+    if(!s.a||!s.b)return;const w=s.a+s.b,good=w===key[i];if(good)ok++;el.classList.add(good?"ok":"bad");fb.className="fb "+(good?"ok":"bad");
+    fb.innerHTML=good?`✓ <span class="zh" style="font-size:18px">${w}</span> ${DMAP[w]?`<span class="py" style="display:inline">${DMAP[w][0]}</span>`:""}`:(DMAP[w]?`✗ <span class="zh" style="font-size:18px">${w}</span> — это слово урока, но оно значит другое.`:`✗ Такого слова в уроке нет.`);});
+  if(!silent){$("#v1Res").className="msg "+(ok===V1.length?"ok":"bad");$("#v1Res").textContent=`Верно: ${ok} из ${V1.length}`;}
+  prog("v1",ok,V1.length);
+}
+
+/* ========== V2: объявление ========== */
+const V2BANK=["优势","录用","专业","实习","户口","分析","面试","毕业","工资","相关","推销","简历","诚实","招聘","合同","经验"];
+const V2=[
+ {nh:null,z:"星火教育中心因为{业务}发展，现在[0]两名课程销售。",py:"Xīnghuǒ Jiàoyù Zhōngxīn yīnwèi yèwù fāzhǎn, xiànzài ___ liǎng míng kèchéng xiāoshòu.",tr:"Учебный центр «Синхо» в связи с расширением деятельности набирает двух менеджеров по продаже курсов."},
+ {nh:"要求 · требования",z:"1. 大学[1]，[2]{不限}；",py:"Dàxué ___, ___ búxiàn;",tr:"1. Высшее образование, специальность любая;"},
+ {z:"2. 有[3]工作[4]；有[5]经历的{应届毕业生}也可以；",py:"Yǒu ___ gōngzuò ___; yǒu ___ jīnglì de yīngjiè bìyèshēng yě kěyǐ;",tr:"2. Опыт работы в этой сфере; подойдут и выпускники этого года, проходившие стажировку;"},
+ {z:"3. [6]，有{责任心}，会[7]{客户}的需要；",py:"___, yǒu zérènxīn, huì ___ kèhù de xūyào;",tr:"3. Честность, ответственность, умение анализировать потребности клиента;"},
+ {z:"4. 汉语和俄语都好的人有[8]。",py:"Hànyǔ hé Éyǔ dōu hǎo de rén yǒu ___.",tr:"4. Хорошее знание китайского и русского — преимущество."},
+ {nh:"工作内容 · обязанности",z:"向学校和{家长}[9]我们的{网课}。",py:"Xiàng xuéxiào hé jiāzhǎng ___ wǒmen de wǎngkè.",tr:"Продвигать наши онлайн-курсы среди школ и родителей."},
+ {nh:"我们提供 · мы предлагаем",z:"[10]{面议}；签正式{劳动}[11]；可以帮助解决北京[12]。",py:"___ miànyì; qiān zhèngshì láodòng ___; kěyǐ bāngzhù jiějué Běijīng ___.",tr:"Зарплата — по итогам собеседования; официальный трудовой договор; помощь с пекинской пропиской."},
+ {nh:"报名 · как откликнуться",z:"有兴趣的同学，请把个人[13]发到我们的邮箱。我们会在一周内通知你是否参加[14]。被[15]的同学，下个月就可以开始工作。",py:"Yǒu xìngqù de tóngxué, qǐng bǎ gèrén ___ fā dào wǒmen de yóuxiāng. Wǒmen huì zài yì zhōu nèi tōngzhī nǐ shìfǒu cānjiā ___. Bèi ___ de tóngxué, xià ge yuè jiù kěyǐ kāishǐ gōngzuò.",tr:"Если вам интересно, пришлите своё резюме на нашу почту. В течение недели мы сообщим, приглашены ли вы на собеседование. Принятые смогут начать работу уже в следующем месяце."}
+];
+function gapLine(s){return mk(s.replace(/\[(\d+)\]/g,"⟦$1⟧")).replace(/⟦(\d+)⟧/g,(m,g)=>`<button class="gp" data-g="${g}">　?　</button>`);}
+function initV2(){
+  const st=S.get("v2",{});
+  $("#v2Wrap").innerHTML=`<span class="pin2"></span><h3>${mk("招聘{启事}")}</h3><span class="py" style="display:block;text-align:center">zhāopìn qǐshì</span><span class="sub tr">Объявление о вакансии</span>`+
+    V2.map(l=>`${l.nh?`<div class="nh">${l.nh}</div>`:""}<div class="ln">${gapLine(l.z)}<span class="py">${l.py}</span><span class="tr">${l.tr}</span></div>`).join("")+`<div class="kbox"></div>`;
+  NEWW["启事"]=["qǐshì","объявление"];
+  $$("#v2Wrap .gp").forEach(b=>{const g=+b.dataset.g;if(st[g]){b.textContent=st[g];b.classList.add("set");}
+    b.onclick=e=>{e.stopPropagation();const used=Object.keys(st).map(k=>st[k]);
+      openPop(b,"банк слов",V2BANK,v=>{st[g]=v;S.set("v2",st);b.textContent=v;b.className="gp set";},used);};});
+  $("#v2Check").onclick=()=>gapCheck("v2",false);
+  $("#v2Clr").onclick=()=>{S.set("v2",{});S.set("v2c",0);$("#v2Res").textContent="";initV2();};
+  if(S.get("v2c",0))gapCheck("v2",true);else prog("v2",0,16);
+}
+function gapCheck(id,silent){
+  const st=S.get(id,{}),key=K[id]||[];let ok=0;S.set(id+"c",1);
+  $$("#"+id+"Wrap .gp").forEach(b=>{const g=+b.dataset.g,v=st[g];b.classList.remove("ok","bad");if(!v)return;const good=v===key[g];if(good)ok++;b.classList.add(good?"ok":"bad");});
+  if(!silent){$("#"+id+"Res").className="msg "+(ok===key.length?"ok":"bad");$("#"+id+"Res").textContent=`Верно: ${ok} из ${key.length}. Красные пропуски можно исправить.`;}
+  prog(id,ok,key.length||1);
+}
+
+/* ========== V3: сочетаемость ========== */
+const V3=[
+ {s:"我已经___了二十份简历。",py:"Wǒ yǐjīng ___le èrshí fèn jiǎnlì.",tr:"Я уже разослал двадцать резюме.",o:["打","接","投"]},
+ {s:"我们下周一___合同。",py:"Wǒmen xià zhōuyī ___ hétong.",tr:"В следующий понедельник мы подписываем договор.",o:["投","签","递"]},
+ {s:"主管让我去___一份传真。",py:"Zhǔguǎn ràng wǒ qù ___ yí fèn chuánzhēn.",tr:"Начальник попросил меня принять факс.",o:["接","递","推"]},
+ {s:"找工作以前，要先___公司的信息。",py:"Zhǎo gōngzuò yǐqián, yào xiān ___ gōngsī de xìnxī.",tr:"Прежде чем искать работу, нужно собрать информацию о компании.",o:["录用","推销","搜集"]},
+ {s:"面试以前，好好___一下自己的优势。",py:"Miànshì yǐqián, hǎohāo ___ yíxià zìjǐ de yōushì.",tr:"Перед собеседованием как следует проанализируйте свои преимущества.",o:["分析","打击","接着"]},
+ {s:"他用{双手}把简历___给了{面试官}。",py:"Tā yòng shuāngshǒu bǎ jiǎnlì ___ gěi le miànshìguān.",tr:"Он обеими руками передал резюме интервьюеру.",o:["投","签","递"]},
+ {s:"___你面试成功！",py:"___ nǐ miànshì chénggōng!",tr:"Желаю вам успешно пройти собеседование!",o:["推荐","祝","得到"]},
+ {s:"这次实习让我___了很多{宝贵}的经验。",py:"Zhè cì shíxí ràng wǒ ___le hěn duō bǎoguì de jīngyàn.",tr:"Благодаря этой стажировке я получил много ценного опыта.",o:["接","递","得到"]},
+ {s:"他被一家律师事务所___了。",py:"Tā bèi yì jiā lǜshī shìwùsuǒ ___ le.",tr:"Его взяли на работу в юридическую фирму.",o:["录用","面试","招聘"]},
+ {s:"找不到工作的问题一直___着他。",py:"Zhǎo bu dào gōngzuò de wèntí yìzhí ___zhe tā.",tr:"Проблема с поиском работы всё время не даёт ему покоя.",o:["打击","困扰","推荐"]},
+ {s:"他大学毕业以后想___律师。",py:"Tā dàxué bìyè yǐhòu xiǎng ___ lǜshī.",tr:"После университета он хочет стать юристом.",o:["作为","是否","当"]},
+ {s:"吃完饭，他___开始写简历。",py:"Chīwán fàn, tā ___ kāishǐ xiě jiǎnlì.",tr:"Поев, он сразу же сел писать резюме.",o:["继续","接着","唯一"]}
+];
+
+/* ========== V4: мемори ========== */
+const MEMW=[["面试","собеседование"],["简历","резюме"],["优势","преимущество"],["诚实","честный"],["招聘","набирать сотрудников"],["录用","принять на работу"],["实习","стажировка"],["工资","зарплата"],["经验","опыт"],["推荐","рекомендовать"],["相符","соответствовать"],["唯一","единственный"],["出路","выход, перспектива"],["幼稚","наивный"],["即将","вот-вот, скоро"],["搜集","собирать (сведения)"],["打工","подрабатывать"],["律师","юрист, адвокат"],["主管","руководитель"],["户口","прописка"],["毕业","окончить вуз"],["亮点","изюминка"],["传真","факс"],["外卖","доставка еды"]];
+let MS={};
+function initMem(){
+  const pick=shuffle(MEMW).slice(0,8);
+  const cards=shuffle(pick.map(w=>({k:w[0],t:"z"})).concat(pick.map(w=>({k:w[0],r:w[1],t:"r"}))));
+  MS={cards,open:[],got:0,moves:0,lock:false};
+  $("#memGrid").innerHTML=cards.map((c,i)=>`<div class="mc" data-i="${i}"><div class="mi"><div class="fa f">聘</div><div class="fa b">${c.t==="z"?`<div class="c">${c.k}</div><div class="py" style="font-size:12px">${DMAP[c.k]?DMAP[c.k][0]:""}</div>`:`<div class="r">${c.r}</div>`}</div></div></div>`).join("");
+  $$("#memGrid .mc").forEach(el=>el.onclick=()=>memClick(el));
+  memInfo();
+}
+function memClick(el){
+  if(MS.lock||el.classList.contains("up")||el.classList.contains("got"))return;
+  el.classList.add("up");MS.open.push(el);
+  if(MS.open.length===2){MS.moves++;const[a,b]=MS.open,ca=MS.cards[+a.dataset.i],cb=MS.cards[+b.dataset.i];
+    if(ca.k===cb.k&&ca.t!==cb.t){a.classList.add("got");b.classList.add("got");MS.got++;MS.open=[];
+      if(MS.got===8){const best=S.get("memBest",0);if(!best||MS.moves<best)S.set("memBest",MS.moves);S.set("memDone",1);prog("v4",1,1);}}
+    else{MS.lock=true;setTimeout(()=>{a.classList.remove("up");b.classList.remove("up");MS.open=[];MS.lock=false;},950);}
+    memInfo();}
+}
+function memInfo(){const best=S.get("memBest",0);$("#memInfo").textContent=`Пар: ${MS.got} / 8 · ходов: ${MS.moves}`+(MS.got===8?" · 完成！":"")+(best?` · рекорд: ${best}`:"");}
+
+/* ========== V5: переписка ========== */
+const V5=[
+ ["小林","安娜，你昨天的面试怎么样？","Ānnà, nǐ zuótiān de miànshì zěnmeyàng?","Анна, как прошло вчерашнее собеседование?",1],
+ ["安娜","{别提了}！我紧张得像热锅上的[0]！","Biétí le! Wǒ jǐnzhāng de xiàng rè guō shang de ___!","И не спрашивай! Я волновалась, как муравей на раскалённом котле!",0],
+ ["小林","为什么？你不是准备得很好吗？","Wèi shénme? Nǐ bú shì zhǔnbèi de hěn hǎo ma?","Почему? Разве ты плохо подготовилась?",1],
+ ["安娜","我[1]准备，前天一直在打工。","Wǒ ___ zhǔnbèi, qiántiān yìzhí zài dǎgōng.","Я почти не готовилась: позавчера весь день была на подработке.",0],
+ ["安娜","{面试官}先问我[2]有相关经验。","Miànshìguān xiān wèn wǒ ___ yǒu xiāngguān jīngyàn.","Сначала интервьюер спросил, есть ли у меня подходящий опыт.",0],
+ ["小林","你不是在律师[3]实习过吗？","Nǐ bú shì zài lǜshī ___ shíxíguo ma?","Ты же стажировалась в юридической фирме?",1],
+ ["安娜","对啊，我说了。可是他说经验[4]重要，[5]他更想知道我为什么想做销售。","Duì a, wǒ shuō le. Kěshì tā shuō jīngyàn ___ zhòngyào, ___ tā gèng xiǎng zhīdào wǒ wèi shénme xiǎng zuò xiāoshòu.","Да, я сказала. Но он ответил, что опыт, конечно, важен, а ему важнее понять, почему я хочу работать в продажах.",0],
+ ["小林","那你怎么回答的？","Nà nǐ zěnme huídá de?","И что ты ответила?",1],
+ ["安娜","我说，[6]一个外国人，我会说俄语和汉语，这是我的[7]。","Wǒ shuō, ___ yí ge wàiguórén, wǒ huì shuō Éyǔ hé Hànyǔ, zhè shì wǒ de ___.","Я сказала, что как иностранка говорю по-русски и по-китайски и что это моё преимущество.",0],
+ ["小林","说得好！什么时候知道是否被[8]？","Shuō de hǎo! Shénme shíhou zhīdào shìfǒu bèi ___?","Хорошо сказала! Когда узнаешь, взяли ли тебя?",1],
+ ["安娜","下个星期。现在只能在家里等电话……","Xià ge xīngqī. Xiànzài zhǐ néng zài jiā lǐ děng diànhuà…","На следующей неделе. Пока остаётся только сидеть дома и ждать звонка…",0],
+ ["小林","[9]在家里等，[10]今天跟我去{招聘会}，再投几份[11]！","___ zài jiā lǐ děng, ___ jīntiān gēn wǒ qù zhāopìnhuì, zài tóu jǐ fèn ___!","Чем сидеть дома и ждать, лучше пойдём сегодня со мной на ярмарку вакансий и разошлём ещё несколько резюме!",1],
+ ["安娜","好主意！万事开头[12]嘛。","Hǎo zhǔyi! Wànshì kāitóu ___ ma.","Отличная идея! Лиха беда начало.",0],
+ ["小林","加油！[13]你[14]！","Jiāyóu! ___ nǐ ___!","Держись! Желаю успеха!",1]
+];
+const V5G=[["外卖","蚂蚁","律师"],["不怎么","是否","没怎么"],["能否","固然","是否"],["传真","事务所","简历"],["与其","作为","固然"],["所以","但是","不如"],["与其","作为","不利于"],["困扰","出路","优势"],["招聘","录用","推荐"],["固然","作为","与其"],["但是","所以","不如"],["合同","简历","户口"],["好","难","快"],["接","递","祝"],["打击","困扰","成功"]];
+function initV5(){
+  const st=S.get("v5",{});
+  $("#v5Wrap").innerHTML=`<div class="top"><span class="zh">小林 ↔ 安娜</span> · WeChat</div>`+V5.map((m,i)=>`<div class="bub${m[4]?"":" me"}"><div class="who">${m[0]}</div><div class="zl">${gapLine(m[1])}</div><span class="py">${m[2]}</span><span class="tr">${m[3]}</span></div>`).join("")+`<div class="kbox"></div>`;
+  $$("#v5Wrap .gp").forEach(b=>{const g=+b.dataset.g;if(st[g]){b.textContent=st[g];b.classList.add("set");}
+    b.onclick=e=>{e.stopPropagation();openPop(b,"выберите",shuffle(V5G[g]),v=>{st[g]=v;S.set("v5",st);b.textContent=v;b.className="gp set";});};});
+  $("#v5Check").onclick=()=>gapCheck("v5",false);
+  $("#v5Clr").onclick=()=>{S.set("v5",{});S.set("v5c",0);$("#v5Res").textContent="";initV5();};
+  if(S.get("v5c",0))gapCheck("v5",true);else prog("v5",0,V5G.length);
+}
+
+/* ========== письмо ========== */
+const W=[
+ ["作为学生，你觉得什么最重要？","Zuòwéi xuésheng, nǐ juéde shénme zuì zhòngyào?","Что, по-вашему, самое важное для вас как для студента?","作为"],
+ ["有什么事情你不怎么喜欢做？为什么？","Yǒu shénme shìqing nǐ bù zěnme xǐhuan zuò? Wèi shénme?","Что вы не особо любите делать? Почему?","不怎么"],
+ ["这个学期有没有哪门课你没怎么复习？结果怎么样？","Zhè ge xuéqī yǒu méiyǒu nǎ mén kè nǐ méi zěnme fùxí? Jiéguǒ zěnmeyàng?","Есть ли в этом семестре предмет, к которому вы почти не готовились? Чем это закончилось?","没怎么"],
+ ["什么习惯有利于学汉语？什么习惯不利于？","Shénme xíguàn yǒulìyú xué Hànyǔ? Shénme xíguàn bùlìyú?","Какие привычки помогают учить китайский, а какие мешают?","有利于 · 不利于"],
+ ["找工作的时候，工资和兴趣哪个更重要？","Zhǎo gōngzuò de shíhou, gōngzī hé xìngqù nǎge gèng zhòngyào?","Что важнее при поиске работы: зарплата или интерес?","固然……但是……"],
+ ["周末下雨了，你会做什么？","Zhōumò xià yǔ le, nǐ huì zuò shénme?","В выходные пошёл дождь. Чем вы займётесь?","与其……不如……"],
+ ["给一家公司写两三句话：问他们是否还在招聘{实习生}，你能否下周去面试。","Gěi yì jiā gōngsī xiě liǎng sān jù huà: wèn tāmen shìfǒu hái zài zhāopìn shíxíshēng, nǐ néngfǒu xià zhōu qù miànshì.","Напишите компании два-три предложения: спросите, набирают ли они ещё стажёров и можно ли вам прийти на собеседование на следующей неделе.","是否 · 能否"],
+ ["你刚开始学汉语的时候，觉得难吗？用“万事开头难”说说你的经历。","Nǐ gāng kāishǐ xué Hànyǔ de shíhou, juéde nán ma? Yòng “wànshì kāitóu nán” shuōshuo nǐ de jīnglì.","Трудно ли вам было, когда вы только начинали учить китайский? Расскажите об этом с выражением «万事开头难».","万事开头难 · 不怎么"]
+];
+function initW(){
+  const st=S.get("w",{});
+  $("#wWrap").innerHTML=W.map((q,i)=>`<div class="wq"><div class="q"><span class="n" style="display:inline-block;width:24px;height:24px;border:1.4px solid var(--ink);border-radius:50%;text-align:center;font:800 12px/21px var(--sans);margin-right:6px;background:var(--paper)">${i+1}</span>${mk(q[0])}<small>${q[3]}</small></div><span class="py">${q[1]}</span><span class="tr">${q[2]}</span><textarea class="inp" data-i="${i}" placeholder="ваш ответ иероглифами…">${esc(st[i]||"")}</textarea></div>`).join("");
+  $$("#wWrap textarea").forEach(t=>t.oninput=()=>{st[t.dataset.i]=t.value;S.set("w",st);});
+}
+
+/* ========== резюме ========== */
+const CVF=[["name","姓名","Имя (можно китайское)",0],["goal","求职意向","Желаемая должность",0],["major","专业","Специальность",0],["edu","教育经历","Образование: годы, вуз",1],["exp","实习 / 打工经历","Стажировки и подработки",1],["lang","语言能力","Языки: HSK, английский…",0],["adv","个人优势","Ваши преимущества — с конструкциями урока",1]];
+function initCV(){
+  const st=S.get("cv",{});
+  $("#cvForm").innerHTML=CVF.map(f=>`<label><span class="zh">${f[1]}</span> · ${f[2]}${f[3]?`<textarea data-k="${f[0]}">${esc(st[f[0]]||"")}</textarea>`:`<input class="inp" data-k="${f[0]}" value="${esc(st[f[0]]||"")}">`}</label>`).join("");
+  const draw=()=>{const v=k=>esc(st[k]||"");
+    $("#cvCard").innerHTML=`<h3>个人简历</h3><div class="ph">照片<br>фото</div>
+      <div class="row"><b>姓名</b>${v("name")||"……"}</div><div class="row"><b>求职意向</b>${v("goal")||"……"}</div><div class="row"><b>专业</b>${v("major")||"……"}</div><div class="row"><b>语言能力</b>${v("lang")||"……"}</div>
+      <div class="blk"><span class="bt">教育经历</span><div>${v("edu")||"……"}</div></div>
+      <div class="blk"><span class="bt">实习 / 打工经历</span><div>${v("exp")||"……"}</div></div>
+      <div class="blk"><span class="bt">个人优势</span><div>${v("adv")||"……"}</div></div>`;};
+  $$("#cvForm [data-k]").forEach(el=>el.oninput=()=>{st[el.dataset.k]=el.value;S.set("cv",st);draw();});
+  draw();
+}
+
+/* ========== режим преподавателя: ключи ========== */
+function fillKeys(on){
+  document.body.classList.toggle("keymode",on);
+  if(!on){$$(".kbox").forEach(k=>k.innerHTML="");return;}
+  const put=(sel,arr,f)=>$$(sel).forEach((b,i)=>{if(arr[i]!=null)b.innerHTML=f(arr[i],i);});
+  ["e1","e2","e3","v3"].forEach(id=>put(`#${id}Wrap .kbox`,K[id]||[],k=>`Ответ: <span class="zh">${esc(k[0])}</span>`));
+  put("#e4Wrap .kbox",K.e4||[],k=>`Образец: <span class="zh">${k[2]}</span>`);
+  put("#e5Wrap .kbox",K.e5||[],k=>`Ответ: <span class="zh">${k.join(" / ")}</span>`);
+  put("#e6Wrap .kbox",K.e6||[],k=>`Ошибка: <span class="zh">${k[0].map(j=>"«"+j+"»").join(" или ")}</span> (номер слова с нуля) → <span class="zh">${k[1]}</span>`);
+  put("#e7Wrap .kbox",K.e7||[],k=>`Образец: <span class="zh">${k[2]}</span>`);
+  put("#e7bWrap .kbox",K.e7b||[],k=>`Образец: ${k}`);
+  put("#v1Wrap .kbox",K.v1||[],k=>`Ответ: <span class="zh">${k}</span>`);
+  fillKeysGP();
+  const g=(id)=>{const b=$(`#${id}Wrap .kbox`);if(b)b.innerHTML=(K[id]||[]).map((w,i)=>`${i+1}) <span class="zh">${w}</span>`).join(" · ");};g("v2");g("v5");
+  /* в «найдите ошибку» показываем само слово, а не индекс */
+  $$("#e6Wrap .qitem").forEach((el,i)=>{const k=(K.e6||[])[i];if(!k)return;$(".kbox",el).innerHTML=`Ошибка: <span class="zh">${k[0].map(j=>E6[i][0][j]).join(" или ")}</span> → <span class="zh">${k[1]}</span>`;});
+}
+(function(){let buf="";document.addEventListener("keydown",e=>{const t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"))return;
+  buf=(buf+(e.key||"")).slice(-6).toLowerCase();if(buf==="laoshi"){buf="";fillKeys(!document.body.classList.contains("keymode"));}});})();
+
+/* ========== фон ========== */
+function initSky(){
+  const sky=$("#sky");let h="";
+  const sheet=(c)=>`<svg viewBox="0 0 20 26"><rect x="1" y="1" width="18" height="24" rx="1.5" fill="${c}" stroke="rgba(48,23,40,.35)" stroke-width=".7"/><path d="M4 7 H16 M4 11 H14 M4 15 H16 M4 19 H11" stroke="rgba(142,47,94,.45)" stroke-width=".9"/></svg>`;
+  const cols=["#fffae3","#f2d679","#fbe7a6","#f3dbe6","#ffffff"];
+  for(let i=0;i<13;i++){const s=10+Math.random()*12;h+=`<div class="sheetf" style="left:${Math.random()*100}vw;width:${s}px;height:${s*1.3}px;animation-duration:${15+Math.random()*16}s;animation-delay:${-Math.random()*25}s"><div style="width:100%;height:100%">${sheet(cols[i%cols.length]).replace("<svg",`<svg style="animation-duration:${3+Math.random()*3}s"`)}</div></div>`;}
+  for(let i=0;i<9;i++){h+=`<div class="spk" style="left:${Math.random()*96}vw;top:${Math.random()*96}vh;animation-delay:${-Math.random()*4}s;width:${12+Math.random()*16}px;height:${12+Math.random()*16}px"><svg viewBox="0 0 20 20"><path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z" fill="${i%2?"#8e2f5e":"#c98f0c"}" opacity=".7"/></svg></div>`;}
+  sky.innerHTML=h;
+}
+function initReveal(){
+  const els=$$(".reveal");if(typeof IntersectionObserver!=="function"){els.forEach(e=>e.classList.add("in"));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{rootMargin:"0px 0px -60px 0px"});
+  els.forEach(e=>io.observe(e));
+}
+
+/* ========== 练: отработка по каждой конструкции ========== */
+const B2=["不怎么","没怎么"];
+const GPD=[
+ {sid:"bzm",num:"甲",zh:"不怎么 / 没怎么",ru:"не особо, почти не",blocks:[
+  {id:"g1b",type:"inp",t:"Ответьте скромно",sub:"Китаец делает вам комплимент. Ответьте скромно по образцу: <span class='zh'>哪里哪里，我……得不怎么……</span>",items:[
+   {zh:"你的汉语说得真流利！",py:"Nǐ de Hànyǔ shuō de zhēn liúlì!"},
+   {zh:"你做的菜真好吃！",py:"Nǐ zuò de cài zhēn hǎochī!"},
+   {zh:"你的字写得真漂亮！",py:"Nǐ de zì xiě de zhēn piàoliang!"},
+   {zh:"你唱歌唱得真好！",py:"Nǐ chàng gē chàng de zhēn hǎo!"}],
+   culture:`<div class="culture"><span class="ch-t">文化 · 哪里哪里</span>На комплимент китайцы по традиции не отвечают «спасибо, я знаю», а скромно отказываются от похвалы: <b class="zh">哪里哪里</b> <span class="py">nǎlǐ nǎlǐ</span> «да где уж там», <b class="zh">过奖了</b> <span class="py">guòjiǎng le</span> «вы меня перехваливаете». <span class="zh">不怎么</span> отлично подходит, чтобы продолжить: <span class="zh">我说得不怎么好，还要多练习</span>. Молодёжь сейчас всё чаще просто говорит <span class="zh">谢谢</span>, но скромный ответ на собеседовании или с людьми старшего возраста всегда уместен.</div>`},
+  {id:"g1c",type:"inp",t:"Переведите на китайский",sub:"Иероглифами. Знаки препинания не важны.",items:[
+   {ru:"Я не особо разбираюсь в продажах.",hint:"不怎么 · 懂 · 销售"},
+   {ru:"На прошлой неделе я почти не спал.",hint:"没怎么 · 睡觉"},
+   {ru:"Эта работа так себе.",hint:"不怎么样 · 份"},
+   {ru:"Он не особо любит еду с доставкой.",hint:"不怎么 · 外卖"}]}
+ ]},
+ {sid:"zw",num:"乙",zh:"作为",ru:"в качестве, будучи",blocks:[
+  {id:"g2b",type:"mc",long:1,t:"Чья это роль?",sub:"Роль после 作为 относится к подлежащему второй части. Выберите продолжение, где подлежащее — тот самый человек.",items:[
+   {s:"作为{面试官}，……",py:"Zuòwéi miànshìguān, …",tr:"Как интервьюер, …",o:["很多人来参加面试。","我要问很多问题。","这家公司很有名。"]},
+   {s:"作为一名{应届毕业生}，……",py:"Zuòwéi yì míng yīngjiè bìyèshēng, …",tr:"Как выпускник этого года, …",o:["公司不怎么喜欢他。","简历很重要。","他的经验固然不多，但是很努力。"]},
+   {s:"作为朋友，……",py:"Zuòwéi péngyou, …",tr:"Как друг, …",o:["我应该跟你说实话。","你的问题很困扰我。","这件事很重要。"]},
+   {s:"作为{留学生}，……",py:"Zuòwéi liúxuéshēng, …",tr:"Как иностранные студенты, …",o:["中国的大学很大。","学校给我们很多帮助。","我们可以申请这个奖学金。"]}]},
+  {id:"g2c",type:"chips",t:"Соберите предложение",sub:"Где позиция подлежащего гибкая, проверка примет оба порядка.",items:[
+   ["Как руководитель, я отвечаю за всех сотрудников.",["负责","我","所有员工","作为","对","主管"]],
+   ["Он участвовал в переговорах в качестве переводчика.",["参加了","他","翻译","谈判","作为"]]]},
+  {id:"g2d",type:"inp",t:"Переведите на китайский",sub:"Внимание: в одной фразе 作为 не нужен.",items:[
+   {ru:"Как студент, я должен много заниматься.",hint:"作为 · 应该 · 学习"},
+   {ru:"Я хочу стать юристом.",hint:"律师 (подумайте: нужен ли 作为?)"},
+   {ru:"Как иностранец, я не очень хорошо знаю китайскую культуру.",hint:"作为 · 外国人 · 了解 · 文化"},
+   {ru:"Он участвовал в ярмарке вакансий как представитель компании.",hint:"作为 · 代表 · 招聘会"}]}
+ ]},
+ {sid:"yly",num:"丙",zh:"有利于 / 不利于",ru:"способствует / мешает",blocks:[
+  {id:"g3b",type:"inp",t:"Из разговорного — в книжное",sub:"Перепишите с конструкцией из рамки: <span class='zh'>对……有好处 → 有利于</span>, <span class='zh'>对……不好 → 不利于</span>.",items:[
+   {zh:"每天读书对你的学习有好处。",py:"Měi tiān dú shū duì nǐ de xuéxí yǒu hǎochu.",frame:"有利于"},
+   {zh:"抽烟对身体不好。",py:"Chōuyān duì shēntǐ bù hǎo.",frame:"不利于"},
+   {zh:"有实习经历对找工作有帮助。",py:"Yǒu shíxí jīnglì duì zhǎo gōngzuò yǒu bāngzhù.",frame:"有利于"},
+   {zh:"天天{加班}对家庭生活不好。",py:"Tiāntiān jiābān duì jiātíng shēnghuó bù hǎo.",frame:"不利于"}]},
+  {id:"g3c",type:"err",t:"Найдите ошибку",sub:"Нажмите на неверное слово.",items:[
+   [["多","运动","有利于","对","身体","。"],"Duō yùndòng yǒulìyú duì shēntǐ.","Много двигаться полезно для здоровья."],
+   [["熬夜","没有利于","健康","。"],"Áoyè méiyǒu lìyú jiànkāng.","Бессонные ночи вредят здоровью."],
+   [["这个","工作","对","我","有利于","。"],"Zhè ge gōngzuò duì wǒ yǒulìyú.","Эта работа мне выгодна."]]},
+  {id:"g3d",type:"inp",t:"Переведите на китайский",sub:"Иероглифами. Знаки препинания не важны.",items:[
+   {ru:"Чтение вслух помогает запоминать новые слова.",hint:"大声读 · 有利于 · 记住 · 生词"},
+   {ru:"Слишком длинное резюме мешает найти работу.",hint:"简历 · 太长 · 不利于"},
+   {ru:"Эта политика выгодна маленьким компаниям.",hint:"政策 · 有利于 · 小公司"},
+   {ru:"Слишком шумная обстановка мешает сосредоточиться.",hint:"太吵的环境 · 不利于 · 集中注意力"}]}
+ ]},
+ {sid:"yq",num:"丁",zh:"与其……不如……",ru:"чем…, лучше…",blocks:[
+  {id:"g4a",type:"mc",long:1,t:"Не перепутайте порядок",sub:"Выберите китайскую фразу, которая значит то же, что русская. Помните: после 与其 стоит то, от чего отказываются.",items:[
+   {sit:"«Лучше поеду на метро, чем на такси».",o:["与其坐地铁，不如坐出租车。","与其坐出租车，不如坐地铁。","与其坐出租车，但是坐地铁。"]},
+   {sit:"«Лучше сам приготовлю, чем заказывать доставку».",o:["与其自己做饭，不如点外卖。","与其点外卖，比自己做饭。","与其点外卖，不如自己做饭。"]},
+   {sit:"«Чем жаловаться, лучше что-нибудь сделать».",o:["与其抱怨，不如做点什么。","与其做点什么，不如抱怨。","抱怨与其，不如做点什么。"]},
+   {sit:"«Чем скучать в большой компании, лучше пойти в маленькую и учиться».",o:["与其去小公司学东西，不如在大公司无聊。","与其在大公司无聊，所以去小公司学东西。","与其在大公司无聊，不如去小公司学东西。"]}]},
+  {id:"g4c",type:"chips",t:"Соберите предложение",sub:"Нажимайте на блоки по порядку.",items:[
+   ["Чем рассылать резюме как попало, лучше сначала проанализировать вакансии.",["不如","随便","投简历","与其","先","分析一下","招聘信息"]],
+   ["Чем ждать автобус, я лучше пройдусь пешком.",["走路","等公交车","我","不如","与其"]]]},
+  {id:"g4d",type:"inp",t:"Переведите на китайский",sub:"Иероглифами. Можно 不如, 还不如 или 倒不如.",items:[
+   {ru:"Чем сидеть дома, лучше пойти в библиотеку.",hint:"与其……不如…… · 图书馆"},
+   {ru:"Чем ехать на такси, лучше на метро.",hint:"坐出租车 · 坐地铁"},
+   {ru:"Чем переживать, лучше сразу спросить у руководителя.",hint:"担心 · 问 · 主管"},
+   {ru:"Чем работать на нелюбимой работе, лучше сменить работу.",hint:"不喜欢的工作 · 换工作"}]}
+ ]},
+ {sid:"gr",num:"戊",zh:"固然……但是……",ru:"конечно…, но…",blocks:[
+  {id:"g5a",type:"mc",t:"固然 или 虽然?",sub:"Подсказки: перед подлежащим стоит только 虽然; рассказ о событии — тоже 虽然; «A, конечно, хорошо, но и B тоже…» (…也) — 固然.",tr:0,items:[
+   {s:"___我很累，但是还得继续写简历。",py:"___ wǒ hěn lèi, dànshì hái děi jìxù xiě jiǎnlì.",tr:"Хоть я и очень устал, мне ещё нужно дописать резюме.",o:["固然","虽然"]},
+   {s:"去大公司___好，去小公司也能学到很多。",py:"Qù dà gōngsī ___ hǎo, qù xiǎo gōngsī yě néng xuédào hěn duō.",tr:"Пойти в крупную компанию, конечно, хорошо, но и в маленькой можно многому научиться.",o:["固然","虽然"]},
+   {s:"___外面下着大雨，他还是去参加面试了。",py:"___ wàimiàn xiàzhe dà yǔ, tā háishi qù cānjiā miànshì le.",tr:"Хотя на улице лил дождь, он всё равно пошёл на собеседование.",o:["固然","虽然"]},
+   {s:"这个办法___可以，那个办法也行。",py:"Zhè ge bànfǎ ___ kěyǐ, nà ge bànfǎ yě xíng.",tr:"Этот способ, конечно, подходит, но и тот тоже годится.",o:["固然","虽然"]},
+   {s:"___他没有经验，公司还是录用了他。",py:"___ tā méiyǒu jīngyàn, gōngsī háishi lùyòngle tā.",tr:"Хотя у него не было опыта, компания всё же взяла его.",o:["固然","虽然"]},
+   {s:"能找到工资高的工作___好，找不到也没关系。",py:"Néng zhǎodào gōngzī gāo de gōngzuò ___ hǎo, zhǎo bu dào yě méi guānxi.",tr:"Найти высокооплачиваемую работу, конечно, хорошо, но если не получится — ничего страшного.",o:["固然","虽然"]}]},
+  {id:"g5b",type:"mc",long:1,t:"Найдите вторую половину",sub:"固然 обещает поворот: признали A — дальше нужна другая, более важная мысль.",items:[
+   {s:"工资固然重要，……",py:"Gōngzī gùrán zhòngyào, …",tr:"Зарплата, конечно, важна, …",o:["所以我只看工资。","与其工资很高。","但是工作环境也很重要。"]},
+   {s:"简历固然要写得规范，……",py:"Jiǎnlì gùrán yào xiě de guīfàn, …",tr:"Резюме, конечно, должно быть оформлено по стандарту, …",o:["可是也要突出自己的亮点。","所以写得很规范。","不如不写简历。"]},
+   {s:"大城市的机会固然多，……",py:"Dà chéngshì de jīhuì gùrán duō, …",tr:"Возможностей в большом городе, конечно, много, …",o:["所以机会很多。","但是竞争也更激烈。","因为机会很多。"]},
+   {s:"他的想法固然有点幼稚，……",py:"Tā de xiǎngfǎ gùrán yǒudiǎn yòuzhì, …",tr:"Его идея, конечно, немного наивная, …",o:["所以很幼稚。","与其不幼稚。","但是很有意思。"]}]},
+  {id:"g5c",type:"inp",t:"Замените 虽然 на 固然",sub:"Перепишите фразу. Помните о месте: 固然 стоит после подлежащего.",items:[
+   {zh:"虽然这个工作很累，但是工资很高。",py:"Suīrán zhè ge gōngzuò hěn lèi, dànshì gōngzī hěn gāo.",frame:"固然"},
+   {zh:"虽然经验很重要，可是态度更重要。",py:"Suīrán jīngyàn hěn zhòngyào, kěshì tàidu gèng zhòngyào.",frame:"固然"},
+   {zh:"虽然大公司很好，但是小公司也有优势。",py:"Suīrán dà gōngsī hěn hǎo, dànshì xiǎo gōngsī yě yǒu yōushì.",frame:"固然"}]},
+  {id:"g5d",type:"inp",t:"Переведите на китайский",sub:"Иероглифами. Знаки препинания не важны.",items:[
+   {ru:"Опыт, конечно, важен, но интерес ещё важнее.",hint:"固然 · 兴趣 · 更"},
+   {ru:"У этой стажировки, конечно, нет зарплаты, но опыт очень ценный.",hint:"固然 · 没有工资 · 宝贵"},
+   {ru:"Учиться в магистратуре, конечно, хорошо, но и работать тоже неплохо.",hint:"读研究生 · 固然好 · 也不错"},
+   {ru:"Деньги, конечно, важны, но настоящего счастья на них не купишь.",hint:"固然 · 买不到 · 真正的快乐"}]}
+ ]},
+ {sid:"sf",num:"己",zh:"是否 / 能否",ru:"ли; можно ли",blocks:[
+  {id:"g6a",type:"mc",t:"是否 или 能否?",sub:"是否 — «да или нет, так ли это» (факт). 能否 — «можно ли, в состоянии ли» (возможность, просьба).",tr:0,items:[
+   {s:"请问，您___有相关经验？",py:"Qǐngwèn, nín ___ yǒu xiāngguān jīngyàn?",tr:"Скажите, пожалуйста, есть ли у вас подходящий опыт?",o:["是否","能否"]},
+   {s:"您___帮我一个忙？",py:"Nín ___ bāng wǒ yí ge máng?",tr:"Не могли бы вы мне помочь?",o:["是否","能否"]},
+   {s:"我不知道这个答案___正确。",py:"Wǒ bù zhīdào zhè ge dá'àn ___ zhèngquè.",tr:"Я не знаю, правильный ли это ответ.",o:["是否","能否"]},
+   {s:"请问，这里___停车？",py:"Qǐngwèn, zhèlǐ ___ tíngchē?",tr:"Скажите, пожалуйста, здесь можно припарковаться?",o:["是否","能否"]},
+   {s:"面试官问我___已经毕业了。",py:"Miànshìguān wèn wǒ ___ yǐjīng bìyè le.",tr:"Интервьюер спросил, окончил ли я уже вуз.",o:["是否","能否"]},
+   {s:"您___把简历发到这个邮箱？",py:"Nín ___ bǎ jiǎnlì fā dào zhè ge yóuxiāng?",tr:"Не могли бы вы прислать резюме на эту почту?",o:["是否","能否"]}]},
+  {id:"g6b",type:"inp",t:"Сделайте официальным",sub:"Перепишите для делового письма: <span class='zh'>是不是 / 有没有 → 是否</span>, <span class='zh'>能不能 → 能否</span>, <span class='zh'>你 → 您</span>, <span class='zh'>你们公司 → 贵公司</span>.",items:[
+   {zh:"你有没有相关经验？",py:"Nǐ yǒu méiyǒu xiāngguān jīngyàn?",frame:"是否"},
+   {zh:"你能不能把合同发给我？",py:"Nǐ néng bu néng bǎ hétong fā gěi wǒ?",frame:"能否"},
+   {zh:"你们公司是不是还在招人？",py:"Nǐmen gōngsī shì bu shì hái zài zhāo rén?",frame:"是否"},
+   {zh:"我想知道我是不是被录用了。",py:"Wǒ xiǎng zhīdào wǒ shì bu shì bèi lùyòng le.",frame:"是否"},
+   {zh:"能不能在这里拍照？",py:"Néng bu néng zài zhèlǐ pāizhào?",frame:"能否"}]},
+  {id:"g6c",type:"err",t:"Найдите ошибку",sub:"Нажмите на неверное слово.",items:[
+   [["您","能否","参加","面试","吗","？"],"Nín néngfǒu cānjiā miànshì ma?","Сможете ли вы прийти на собеседование?"],
+   [["他","来","是否","？"],"Tā lái shìfǒu?","Придёт ли он?"],
+   [["请问","，","这里","否","能","拍照","？"],"Qǐngwèn, zhèlǐ fǒu néng pāizhào?","Скажите, пожалуйста, здесь можно фотографировать?"]]},
+  {id:"g6d",type:"inp",t:"Переведите на китайский",sub:"Официальный стиль. Иероглифами.",items:[
+   {ru:"Скажите, пожалуйста, есть ли у вас опыт работы в продажах?",hint:"是否 · 销售经验"},
+   {ru:"Не могли бы вы прислать мне информацию о компании?",hint:"能否 · 发给我 · 公司的信息"},
+   {ru:"Я не знаю, возьмут ли меня на работу.",hint:"不知道 · 是否 · 被录用"},
+   {ru:"Можно ли подписать договор завтра?",hint:"能否 · 明天 · 签合同"}]}
+ ]}
+];
+Object.assign(NEWW,{"软件":["ruǎnjiàn","программа, софт"],"备课":["bèikè","готовиться к уроку"],"成熟":["chéngshú","зрелый, взрослый"],"留学生":["liúxuéshēng","иностранный студент"],"效率":["xiàolǜ","эффективность"]});
+const GPREG=[];
+function blkHTML(b){
+  const tg=`<div class="tgs"><button class="mini tg-py">拼音</button><button class="mini tg-tr">перевод</button></div>`;
+  const score=`<div class="score"><span id="${b.id}Count"></span><div class="bar"><i id="${b.id}Bar"></i></div><span class="err" id="${b.id}Err"></span><button class="btn small" id="${b.id}Reset">сбросить</button></div>`;
+  const btns=`<div class="row-btns"><button class="btn accent" id="${b.id}Check">Проверить</button><button class="btn small" id="${b.id}Clr">очистить</button><span class="msg" id="${b.id}Res"></span></div>`;
+  return `<div class="panel xblk" id="${b.id}"${b.tr===0?' data-tr="0"':""}><div class="xh"><h3>${b.t}</h3>${tg}</div><p class="xsub">${b.sub}</p>
+    <div id="${b.id}Wrap"></div>${b.type==="mc"||b.type==="err"?score:btns}${b.culture||""}<div class="shot">Пришлите скриншот выполненного упражнения</div></div>`;
+}
+function buildGP(){
+  const hub=`<section class="task" id="gp"><div class="binder"></div>
+    <div class="sec-head"><div class="sec-num">练</div><h2>Отработка по каждой конструкции</h2></div>
+    <p class="sec-sub">Шесть отдельных блоков — по одному на каждую конструкцию. В каждом — задания разного типа и обязательно перевод с русского на китайский. Выберите конструкцию; общая практика, где они смешаны, начинается после этого раздела.</p>
+    <div class="panel"><span class="tape"></span><div class="gnav gpnav">${GPD.map(g=>`<a href="#gp-${g.sid}">${g.zh.replace(/……/g,"…")}<small>${g.num} · ${g.blocks.length} задания</small></a>`).join("")}</div>
+    <div class="foot">У каждого задания свои кнопки <b>拼音</b> и <b>перевод</b>. Где перевод мог бы подсказать ответ, он по умолчанию скрыт.</div></div></section>`;
+  const secs=GPD.map((g,gi)=>`<section class="task gpsec" id="gp-${g.sid}"><div class="binder"></div>
+    <div class="sec-head"><div class="sec-num">${g.num}</div><h2><span class="zh">${g.zh}</span> <span style="font-size:.6em;font-style:italic;font-weight:500;color:var(--ink-soft)">${g.ru}</span></h2></div>
+    <div class="gplinks"><a class="btn small" href="#g-${g.sid}">← теория</a><a class="btn small" href="#gp">все конструкции</a>${gi<GPD.length-1?`<a class="btn small primary" href="#gp-${GPD[gi+1].sid}">следующая: <span class="zh">${GPD[gi+1].zh.replace(/……/g,"…")}</span> →</a>`:`<a class="btn small primary" href="#e1">к смешанной практике →</a>`}</div>
+    ${g.blocks.map(blkHTML).join("")}</section>`).join("");
+  $("#gpHost").outerHTML=hub+secs;
+}
+function renderInp(q,i){
+  if(q.ru)return `<div class="ru"><span class="n">${i+1}</span>${q.ru}</div>${q.hint?`<div class="hint">опорные слова: <span class="zh">${q.hint}</span></div>`:""}`;
+  return `<div class="src"><span class="n">${i+1}</span>${mk(q.zh)}${q.frame?`<span class="frame">${q.frame}</span>`:""}</div>${q.py?`<span class="py">${q.py}</span>`:""}${q.tr?`<span class="tr">${q.tr}</span>`:""}`;
+}
+function initChips(id,items){
+  const key=K[id]||[];const st=S.get(id,{});
+  $("#"+id+"Wrap").innerHTML=items.map((q,i)=>`<div class="qitem" data-i="${i}"><div class="sit"><span class="n">${i+1}</span>${q[0]}</div><div class="chips ans"></div><div class="chips pool"></div><div class="fb"></div><div class="kbox"></div></div>`).join("");
+  $$("#"+id+"Wrap .qitem").forEach(el=>{const i=+el.dataset.i,q=items[i];
+    const draw=()=>{const seq=st[i]||[];
+      $(".ans",el).innerHTML=seq.map(j=>`<button data-j="${j}">${q[1][j]}</button>`).join("");
+      $(".pool",el).innerHTML=q[1].map((c,j)=>seq.indexOf(j)<0?`<button data-j="${j}">${c}</button>`:"").join("");
+      const reset=()=>{el.classList.remove("ok","bad");$(".fb",el).textContent="";};
+      $$(".pool button",el).forEach(b=>b.onclick=()=>{const s=st[i]||[];s.push(+b.dataset.j);st[i]=s;S.set(id,st);reset();draw();});
+      $$(".ans button",el).forEach(b=>b.onclick=()=>{const s=st[i]||[];s.splice(s.indexOf(+b.dataset.j),1);st[i]=s;S.set(id,st);reset();draw();});};
+    draw();});
+  const chk=silent=>{let ok=0;S.set(id+"c",1);
+    $$("#"+id+"Wrap .qitem").forEach(el=>{const i=+el.dataset.i,seq=st[i]||[],fb=$(".fb",el);el.classList.remove("ok","bad");fb.className="fb";fb.textContent="";
+      if(!seq.length)return;if(seq.length<items[i][1].length){el.classList.add("bad");fb.className="fb bad";fb.textContent="✗ Использованы не все блоки.";return;}
+      const v=seq.map(j=>items[i][1][j]).join("");const good=(key[i]||[]).indexOf(v)>=0;if(good)ok++;el.classList.add(good?"ok":"bad");fb.className="fb "+(good?"ok":"bad");fb.textContent=good?"✓ Верно!":"✗ Порядок неверный. Вспомните формулу конструкции.";});
+    if(!silent){$("#"+id+"Res").className="msg "+(ok===items.length?"ok":"bad");$("#"+id+"Res").textContent=`Верно: ${ok} из ${items.length}`;}prog(id,ok,items.length);};
+  $("#"+id+"Check").onclick=()=>chk(false);
+  $("#"+id+"Clr").onclick=()=>{S.set(id,{});S.set(id+"c",0);$("#"+id+"Res").textContent="";initChips(id,items);};
+  if(S.get(id+"c",0))chk(true);else prog(id,0,items.length);
+}
+function initErr(id,items){
+  const key=K[id]||[];const st=S.get(id,{});
+  $("#"+id+"Wrap").innerHTML=items.map((q,i)=>`<div class="qitem" data-i="${i}"><div class="tok"><span class="n">${i+1}</span>${q[0].map((t,j)=>/^[，。！？：]+$/.test(t)?`<span class="pt">${t}</span>`:`<button data-j="${j}">${t}</button>`).join("")}</div><span class="py">${q[1]}</span><span class="tr">${q[2]}</span><div class="fix"></div><div class="kbox"></div></div>`).join("");
+  const score=()=>{const n=Object.keys(st).length,e=S.get(id+"e",0);$("#"+id+"Count").textContent=`Найдено: ${n} / ${items.length}`;$("#"+id+"Err").textContent=e?`промахов: ${e}`:"";bar("#"+id+"Bar",n,items.length);prog(id,n,items.length);};
+  $$("#"+id+"Wrap .qitem").forEach(el=>{const i=+el.dataset.i,k=key[i]||[[],"",""];
+    const solve=j=>{el.classList.add("ok","done");const b=$(`button[data-j="${j}"]`,el);if(b)b.classList.add("hit");$(".fix",el).innerHTML=`✓ <span class="zh">${k[1]}</span><br>${k[2]}`;};
+    if(st[i]!=null)solve(st[i]);
+    $$("button",el).forEach(b=>b.onclick=()=>{if(st[i]!=null)return;const j=+b.dataset.j;
+      if(k[0].indexOf(j)>=0){st[i]=j;S.set(id,st);solve(j);score();}
+      else{b.classList.add("miss");el.classList.add("shake");setTimeout(()=>{el.classList.remove("shake");b.classList.remove("miss");},600);S.set(id+"e",S.get(id+"e",0)+1);score();}});
+  });
+  $("#"+id+"Reset").onclick=()=>{Object.keys(st).forEach(k=>delete st[k]);S.set(id,{});S.set(id+"e",0);initErr(id,items);};
+  score();
+}
+function initGP(){
+  GPD.forEach(g=>g.blocks.forEach(b=>{GPREG.push({id:b.id,type:b.type,items:b.items});
+    if(b.type==="mc")initMC(b.id,b.items,{long:b.long});
+    else if(b.type==="inp")initInputs(b.id,b.items,renderInp);
+    else if(b.type==="chips")initChips(b.id,b.items);
+    else if(b.type==="err")initErr(b.id,b.items);}));
+}
+function fillKeysGP(){
+  GPREG.forEach(r=>{const k=K[r.id]||[];$$(`#${r.id}Wrap .kbox`).forEach((box,i)=>{const x=k[i];if(!x)return;
+    box.innerHTML=r.type==="mc"?`Ответ: <span class="zh">${esc(x[0])}</span>`:r.type==="inp"?`Образец: <span class="zh">${x[2]}</span>`:r.type==="chips"?`Ответ: <span class="zh">${x.join(" / ")}</span>`:`Ошибка: <span class="zh">${x[0].map(j=>r.items[i][0][j]).join(" или ")}</span> → <span class="zh">${x[1]}</span>`;});});
+}
+
+/* ========== старт ========== */
+buildGP();initTg();initDict();initGram();initGP();
+initMC("e1",E1);initMC("e2",E2,{long:1});initMC("e3",E3,{long:1});
+initInputs("e4",E4,(q,i)=>`<div class="src"><span class="n">${i+1}</span>${mk(q[0])}<span class="frame">${q[2]}</span></div><span class="py">${q[1]}</span>`);
+initE5();initE6();
+initInputs("e7",E7,(q,i)=>`<div class="ru"><span class="n">${i+1}</span>${q[0]}</div><div class="hint">опорные слова: <span class="zh">${q[1]}</span></div>`);initE7b();
+initV1();initV2();initMC("v3",V3);initMem();if(S.get("memDone",0))prog("v4",1,1);else prog("v4",0,1);
+initV5();initW();initCV();initSky();applyTg();initReveal();
+$("#memNew").onclick=initMem;
+</script>
+</body>
+</html>
